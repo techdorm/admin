@@ -193,8 +193,20 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <b>活动广场</b>
-        <!-- <small>列表信息</small> -->
+       
+        
+        <div class="panel-tools">
+                
+                <i class="fa fa-thumb-tack"> 活动管理</i>
+                <div class="btn-group" style="float:right">
+                  <a class="btn">
+                    <i class="fa fa-plus"></i> 增加
+                  </a>
+                  <a class="btn" data-toggle="toolbar-tooltip" title="" data-original-title="Reload">
+                    <i class="fa fa-refresh"></i>
+                  </a>
+              </div>
+         </div>
       </h1>
     </section>
 
@@ -204,253 +216,260 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">数据</h3>
+              
+         
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
+                  <th>ID</th>
                   <th>活动海报</th>
                   <th>活动名称</th>
                   <th>起止时间</th>
                   <th>活动地点</th>
                   <th>活动状态</th>
+                  <th>操作</th>                
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
+                  <th>1</th>
                   <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
+                  <td>Internet Explorer 4.0</td>
                   <td>Win 95+</td>
                   <td> 4</td>
                   <td>X</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.0
+                  <td>   
+                    <a class="btn btn-info">
+                      <i class="fa fa-edit"></i>
+                    </a>  
+                    <a class="btn btn-danger">
+                      <i class="fa fa-trash"></i>
+                    </a>
                   </td>
-                  <td>Win 95+</td>
-                  <td>5</td>
-                  <td>C</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 6
-                  </td>
-                  <td>Win 98+</td>
-                  <td>6</td>
-                  <td>A</td>
                 </tr>
                 
                 <tr>
-                  <td>Gecko</td>
-                  <td>Netscape 7.2</td>
-                  <td>Win 95+ / Mac OS 8.6-9.2</td>
-                  <td>1.7</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Netscape Browser 8</td>
-                  <td>Win 98SE+</td>
-                  <td>1.7</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Mozilla 1.4</td>
-                  <td>Win 95+ / OSX.1+</td>
-                  <td>1.4</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Mozilla 1.5</td>
-                  <td>Win 95+ / OSX.1+</td>
-                  <td>1.5</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Mozilla 1.6</td>
-                  <td>Win 95+ / OSX.1+</td>
-                  <td>1.6</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Mozilla 1.7</td>
-                  <td>Win 98+ / OSX.1+</td>
-                  <td>1.7</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Mozilla 1.8</td>
-                  <td>Win 98+ / OSX.1+</td>
-                  <td>1.8</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Seamonkey 1.1</td>
-                  <td>Win 98+ / OSX.2+</td>
-                  <td>1.8</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Epiphany 2.20</td>
-                  <td>Gnome</td>
-                  <td>1.8</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Webkit</td>
-                  <td>Safari 1.2</td>
-                  <td>OSX.3</td>
-                  <td>125.5</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Webkit</td>
-                  <td>Safari 1.3</td>
-                  <td>OSX.3</td>
-                  <td>312.8</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Webkit</td>
-                  <td>Safari 2.0</td>
-                  <td>OSX.4+</td>
-                  <td>419.3</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Webkit</td>
-                  <td>Safari 3.0</td>
-                  <td>OSX.4+</td>
-                  <td>522.1</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Webkit</td>
-                  <td>OmniWeb 5.5</td>
-                  <td>OSX.4+</td>
-                  <td>420</td>
-                  <td>A</td>
-                </tr>
-                <tr>
+                  <th>2</th>
                   <td>Webkit</td>
                   <td>iPod Touch / iPhone</td>
                   <td>iPod</td>
                   <td>420.1</td>
                   <td>A</td>
+                  <td>  
+                    <a class="btn btn-info">
+                      <i class="fa fa-edit"></i>
+                    </a>   
+                    <a class="btn btn-danger">
+                      <i class="fa fa-trash"></i>
+                    </a>
+                  </td>
                 </tr>
                 <tr>
+                  <th>3</th>
                   <td>Webkit</td>
                   <td>S60</td>
                   <td>S60</td>
                   <td>413</td>
                   <td>A</td>
+                  <td>   
+                    <a class="btn btn-info">
+                      <i class="fa fa-edit"></i>
+                    </a>  
+                    <a class="btn btn-danger">
+                      <i class="fa fa-trash"></i>
+                    </a>
+                  </td>
                 </tr>
                 <tr>
+                  <th>4</th>
                   <td>Presto</td>
                   <td>Opera 7.0</td>
                   <td>Win 95+ / OSX.1+</td>
                   <td>-</td>
                   <td>A</td>
+                  <td>
+                   <a class="btn btn-info">
+                      <i class="fa fa-edit"></i>
+                    </a>     
+                    <a class="btn btn-danger">
+                      <i class="fa fa-trash"></i>
+                    </a>
+                  </td>
                 </tr>
                 <tr>
+                  <th>5</th>
                   <td>Presto</td>
                   <td>Opera 7.5</td>
                   <td>Win 95+ / OSX.2+</td>
                   <td>-</td>
                   <td>A</td>
+                  <td>
+                    <a class="btn btn-info">
+                      <i class="fa fa-edit"></i>
+                    </a>     
+                    <a class="btn btn-danger">
+                      <i class="fa fa-trash"></i>
+                    </a>
+                  </td>
                 </tr>
                 <tr>
+                  <th>6</th>
                   <td>Presto</td>
                   <td>Opera 8.0</td>
                   <td>Win 95+ / OSX.2+</td>
                   <td>-</td>
                   <td>A</td>
+                  <td>  
+                    <a class="btn btn-info">
+                      <i class="fa fa-edit"></i>
+                    </a>   
+                    <a class="btn btn-danger">
+                      <i class="fa fa-trash"></i>
+                    </a>
+                  </td>
                 </tr>
                 <tr>
+                  <th>7</th>
                   <td>Presto</td>
                   <td>Opera 8.5</td>
                   <td>Win 95+ / OSX.2+</td>
                   <td>-</td>
                   <td>A</td>
+                  <td>  
+                    <a class="btn btn-info">
+                      <i class="fa fa-edit"></i>
+                    </a>   
+                    <a class="btn btn-danger">
+                      <i class="fa fa-trash"></i>
+                    </a>
+                  </td>
                 </tr>
                 <tr>
+                  <th>8</th>
                   <td>Presto</td>
                   <td>Opera 9.0</td>
                   <td>Win 95+ / OSX.3+</td>
                   <td>-</td>
                   <td>A</td>
+                  <td>
+                    <a class="btn btn-info">
+                      <i class="fa fa-edit"></i>
+                    </a>     
+                    <a class="btn btn-danger">
+                      <i class="fa fa-trash"></i>
+                    </a>
+                  </td>
                 </tr>
                 <tr>
+                  <th>9</th>
                   <td>KHTML</td>
                   <td>Konqureror 3.1</td>
                   <td>KDE 3.1</td>
                   <td>3.1</td>
                   <td>C</td>
+                  <td>    
+                    <a class="btn btn-info">
+                      <i class="fa fa-edit"></i>
+                    </a> 
+                    <a class="btn btn-danger">
+                      <i class="fa fa-trash"></i>
+                    </a>
+                  </td>
                 </tr>
                 <tr>
+                  <th>10</th>
                   <td>KHTML</td>
                   <td>Konqureror 3.5</td>
                   <td>KDE 3.5</td>
                   <td>3.5</td>
                   <td>A</td>
+                  <td> 
+                    <a class="btn btn-info">
+                      <i class="fa fa-edit"></i>
+                    </a>    
+                    <a class="btn btn-danger">
+                      <i class="fa fa-trash"></i>
+                    </a>
+                  </td>
                 </tr>
                 <tr>
+                  <th>11</th>
                   <td>Tasman</td>
                   <td>Internet Explorer 5.2</td>
                   <td>Mac OS 8-X</td>
                   <td>1</td>
                   <td>C</td>
+                  <td>
+                    <a class="btn btn-info">
+                      <i class="fa fa-edit"></i>
+                    </a> 
+                    <a class="btn btn-danger">
+                      <i class="fa fa-trash"></i>
+                    </a>
+                  </td>
                 </tr>
                 <tr>
+                  <th>12</th>
                   <td>Misc</td>
                   <td>NetFront 3.1</td>
                   <td>Embedded devices</td>
                   <td>-</td>
                   <td>C</td>
+                  <td> 
+                    <a class="btn btn-info">
+                      <i class="fa fa-edit"></i>
+                    </a>    
+                    <a class="btn btn-danger">
+                      <i class="fa fa-trash"></i>
+                    </a>
+                  </td>
                 </tr>
                 <tr>
+                  <th>13</th>
                   <td>Misc</td>
                   <td>Links</td>
                   <td>Text only</td>
                   <td>-</td>
                   <td>X</td>
+                  <td>
+                    <a class="btn btn-info">
+                      <i class="fa fa-edit"></i>
+                    </a>    
+                    <a class="btn btn-danger">
+                      <i class="fa fa-trash"></i>
+                    </a>
+                  </td>
                 </tr>
                 <tr>
+                  <th>14</th>
                   <td>Misc</td>
                   <td>Lynx</td>
                   <td>Text only</td>
                   <td>-</td>
                   <td>X</td>
+                  <td>  
+                    <a class="btn btn-info">
+                      <i class="fa fa-edit"></i>
+                    </a>   
+                    <a class="btn btn-danger">
+                      <i class="fa fa-trash"></i>
+                    </a>
+                  </td>
                 </tr>
-                <tr>
-                  <td>Other browsers</td>
-                  <td>All others</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>U</td>
-                </tr>
+                
                 </tbody>
                 <tfoot>
                 <tr>
+                  <th>ID</th>
                   <th>活动海报</th>
                   <th>活动名称</th>
                   <th>起止时间</th>
                   <th>活动地点</th>
                   <th>活动状态</th>
+                  <th>操作</th>
                 </tr>
                 </tfoot>
               </table>

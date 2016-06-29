@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
 
   <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+  <link rel="stylesheet" href="plugins/pace/pace.min.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -26,7 +27,7 @@
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="#" class="logo">
+    <a href="index.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>HDU</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -173,7 +174,7 @@
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-dashboard"></i> <span>活动广场</span> </a></li>
+        <li class="active"><a href="index.html"><i class="fa fa-dashboard"></i> <span>活动广场</span> </a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>通知公告</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>寝室卫生</span> <i class="fa fa-angle-left pull-right"></i></a>
@@ -199,11 +200,11 @@
                 
                 <i class="fa fa-thumb-tack"> 活动管理</i>
                 <div class="btn-group" style="float:right">
-                  <a class="btn">
-                    <i class="fa fa-plus"></i> 增加
+                  <a href="addhd.html" class="btn">
+                    <i class="fa fa-plus" id="addOneRow"></i> 增加
                   </a>
-                  <a class="btn" data-toggle="toolbar-tooltip" title="" data-original-title="Reload">
-                    <i class="fa fa-refresh"></i>
+                  <a class="btn ajax" title="Ajax Request" onclick="window.location.href=window.location.href">
+                    <i class="fa fa-spin fa-refresh"></i>
                   </a>
               </div>
          </div>
@@ -224,246 +225,188 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>活动海报</th>
-                  <th>活动名称</th>
-                  <th>起止时间</th>
-                  <th>活动地点</th>
-                  <th>活动状态</th>
-                  <th>操作</th>                
+                
+                  <th id="pic">活动海报</th>
+                  <th id="name">活动名称</th>
+                  <th id="time">起止时间</th>
+                  <th id="place">活动地点</th>
+                  <th id="status">活动状态</th>
+                  <th id="operate">操作</th>                
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <th>1</th>
                   <td>Trident</td>
                   <td>Internet Explorer 4.0</td>
                   <td>Win 95+</td>
                   <td> 4</td>
                   <td>X</td>
                   <td>   
-                    <a class="btn btn-info">
-                      <i class="fa fa-edit"></i>
-                    </a>  
-                    <a class="btn btn-danger">
+                     
+                    <a class="btn btn-danger delOneRow">
                       <i class="fa fa-trash"></i>
                     </a>
                   </td>
                 </tr>
-                
                 <tr>
-                  <th>2</th>
                   <td>Webkit</td>
                   <td>iPod Touch / iPhone</td>
                   <td>iPod</td>
                   <td>420.1</td>
                   <td>A</td>
-                  <td>  
-                    <a class="btn btn-info">
-                      <i class="fa fa-edit"></i>
-                    </a>   
-                    <a class="btn btn-danger">
+                  <td>   
+                    <a class="btn btn-danger delOneRow">
                       <i class="fa fa-trash"></i>
                     </a>
                   </td>
                 </tr>
                 <tr>
-                  <th>3</th>
                   <td>Webkit</td>
                   <td>S60</td>
                   <td>S60</td>
                   <td>413</td>
                   <td>A</td>
-                  <td>   
-                    <a class="btn btn-info">
-                      <i class="fa fa-edit"></i>
-                    </a>  
-                    <a class="btn btn-danger">
+                  <td>     
+                    <a class="btn btn-danger delOneRow">
                       <i class="fa fa-trash"></i>
                     </a>
                   </td>
                 </tr>
                 <tr>
-                  <th>4</th>
                   <td>Presto</td>
                   <td>Opera 7.0</td>
                   <td>Win 95+ / OSX.1+</td>
                   <td>-</td>
                   <td>A</td>
                   <td>
-                   <a class="btn btn-info">
-                      <i class="fa fa-edit"></i>
-                    </a>     
-                    <a class="btn btn-danger">
+                    <a class="btn btn-danger delOneRow">
                       <i class="fa fa-trash"></i>
                     </a>
                   </td>
                 </tr>
                 <tr>
-                  <th>5</th>
                   <td>Presto</td>
                   <td>Opera 7.5</td>
                   <td>Win 95+ / OSX.2+</td>
                   <td>-</td>
                   <td>A</td>
-                  <td>
-                    <a class="btn btn-info">
-                      <i class="fa fa-edit"></i>
-                    </a>     
-                    <a class="btn btn-danger">
+                  <td> 
+                    <a class="btn btn-danger delOneRow">
                       <i class="fa fa-trash"></i>
                     </a>
                   </td>
                 </tr>
                 <tr>
-                  <th>6</th>
                   <td>Presto</td>
                   <td>Opera 8.0</td>
                   <td>Win 95+ / OSX.2+</td>
                   <td>-</td>
                   <td>A</td>
-                  <td>  
-                    <a class="btn btn-info">
-                      <i class="fa fa-edit"></i>
-                    </a>   
-                    <a class="btn btn-danger">
+                  <td> 
+                    <a class="btn btn-danger delOneRow">
                       <i class="fa fa-trash"></i>
                     </a>
                   </td>
                 </tr>
                 <tr>
-                  <th>7</th>
                   <td>Presto</td>
                   <td>Opera 8.5</td>
                   <td>Win 95+ / OSX.2+</td>
                   <td>-</td>
                   <td>A</td>
-                  <td>  
-                    <a class="btn btn-info">
-                      <i class="fa fa-edit"></i>
-                    </a>   
-                    <a class="btn btn-danger">
+                  <td>
+                    <a class="btn btn-danger delOneRow">
                       <i class="fa fa-trash"></i>
                     </a>
                   </td>
                 </tr>
                 <tr>
-                  <th>8</th>
                   <td>Presto</td>
                   <td>Opera 9.0</td>
                   <td>Win 95+ / OSX.3+</td>
                   <td>-</td>
                   <td>A</td>
-                  <td>
-                    <a class="btn btn-info">
-                      <i class="fa fa-edit"></i>
-                    </a>     
-                    <a class="btn btn-danger">
-                      <i class="fa fa-trash"></i>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <th>9</th>
-                  <td>KHTML</td>
-                  <td>Konqureror 3.1</td>
-                  <td>KDE 3.1</td>
-                  <td>3.1</td>
-                  <td>C</td>
                   <td>    
-                    <a class="btn btn-info">
-                      <i class="fa fa-edit"></i>
-                    </a> 
-                    <a class="btn btn-danger">
+                    <a class="btn btn-danger delOneRow">
                       <i class="fa fa-trash"></i>
                     </a>
                   </td>
                 </tr>
                 <tr>
-                  <th>10</th>
+                  <td id="pic">KHTML</td>
+                  <td id="name">Konqureror 3.1</td>
+                  <td id="time">KDE 3.1</td>
+                  <td id="place">3.1</td>
+                  <td id="status">C</td>
+                  <td id="operate"> 
+                    <a class="btn btn-danger delOneRow">
+                      <i class="fa fa-trash"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
                   <td>KHTML</td>
                   <td>Konqureror 3.5</td>
                   <td>KDE 3.5</td>
                   <td>3.5</td>
                   <td>A</td>
-                  <td> 
-                    <a class="btn btn-info">
-                      <i class="fa fa-edit"></i>
-                    </a>    
-                    <a class="btn btn-danger">
+                  <td>  
+                    <a class="btn btn-danger delOneRow">
                       <i class="fa fa-trash"></i>
                     </a>
                   </td>
                 </tr>
                 <tr>
-                  <th>11</th>
                   <td>Tasman</td>
                   <td>Internet Explorer 5.2</td>
                   <td>Mac OS 8-X</td>
                   <td>1</td>
                   <td>C</td>
                   <td>
-                    <a class="btn btn-info">
-                      <i class="fa fa-edit"></i>
-                    </a> 
-                    <a class="btn btn-danger">
+                    <a class="btn btn-danger delOneRow">
                       <i class="fa fa-trash"></i>
                     </a>
                   </td>
                 </tr>
                 <tr>
-                  <th>12</th>
                   <td>Misc</td>
                   <td>NetFront 3.1</td>
                   <td>Embedded devices</td>
                   <td>-</td>
                   <td>C</td>
-                  <td> 
-                    <a class="btn btn-info">
-                      <i class="fa fa-edit"></i>
-                    </a>    
-                    <a class="btn btn-danger">
+                  <td>   
+                    <a class="btn btn-danger delOneRow">
                       <i class="fa fa-trash"></i>
                     </a>
                   </td>
                 </tr>
                 <tr>
-                  <th>13</th>
                   <td>Misc</td>
                   <td>Links</td>
                   <td>Text only</td>
                   <td>-</td>
                   <td>X</td>
                   <td>
-                    <a class="btn btn-info">
-                      <i class="fa fa-edit"></i>
-                    </a>    
-                    <a class="btn btn-danger">
+                    <a class="btn btn-danger delOneRow">
                       <i class="fa fa-trash"></i>
                     </a>
                   </td>
                 </tr>
                 <tr>
-                  <th>14</th>
                   <td>Misc</td>
                   <td>Lynx</td>
                   <td>Text only</td>
                   <td>-</td>
                   <td>X</td>
-                  <td>  
-                    <a class="btn btn-info">
-                      <i class="fa fa-edit"></i>
-                    </a>   
-                    <a class="btn btn-danger">
+                  <td> 
+                    <a class="btn btn-danger delOneRow">
                       <i class="fa fa-trash"></i>
                     </a>
                   </td>
                 </tr>
-                
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>ID</th>
                   <th>活动海报</th>
                   <th>活动名称</th>
                   <th>起止时间</th>
@@ -541,6 +484,9 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <!-- DataTables -->
 <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+<!-- PACE -->
+<script src="plugins/pace/pace.min.js"></script>
+
 <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
 <!-- SlimScroll -->
 <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
@@ -563,6 +509,43 @@
       "autoWidth": false
     });
   });
+  $(document).ajaxStart(function() { Pace.restart(); });
+            $('.ajax').click(function(){
+                $.ajax({url: '#', success: function(result){
+                    console.log("refresh success");
+            }});
+      });
 </script>
+<script type="text/javascript"> 
+$(document).ready(function(){
+    $("#addOneRow").click(function() { 
+
+        // var tempTr = $("tr:first").clone(true); 
+        // $("tr:last").after(tempTr); 
+        // $("tr:last > td > #name").val("");//新添加行name为空 
+        // $("tr:last > td > #address").val("");//新添加行address为空 
+        
+
+
+        }); 
+
+        $(".delOneRow").click(function() { 
+        if ($("tr").length < 2) { 
+        alert("至少保留一个活动!"); 
+        } else { 
+        if (confirm("确认删除?")) { 
+        $(this).parent().parent().remove(); 
+        } 
+        } 
+        }); 
+
+
+        
+
+});
+</script> 
+
+
 </body>
 </html>
+   

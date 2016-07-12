@@ -506,7 +506,7 @@ $(document).ready(function(){
     var d = dialog({
       title: '增加通知',
       width: 460,
-      content: '<form id="form" method="post">'
+      content: '<form action=" " id="form" method="post">'
                     + '<div class="form-group">'
                         +'<label for="name" class="control-label">通知标题</label>'
                         +'<input type="text" class="form-control" name="name" id="name" placeholder="请填写输入通知标题" data-validation="required" data-validation-error-msg="请填写通知标题">'
@@ -519,29 +519,28 @@ $(document).ready(function(){
                         +'<label for="time" class="control-label">通知时间</label>'
                         +'<input type="text" class="form-control" name="time" id="time" placeholder="请填写通知时间" data-validation="required" data-validation-error-msg="请填写通知时间">'
                     +'</div>'
-                  +'</form>',
-      okValue: '确 定',
-      ok: function () {
-        // dialog()
-        // .title('提示2')
-        // .content('hello world')
-        // .button([{
-        //   value: '打开',
-        //   autofocus: true,
-        //   callback: function () {
-        //     dialog()
-        //     .title('提示')
-        //     .showModal();
-        //   }
-        // }])
-        
-        // .show();
-        return false;
-      },
-      cancelValue: '取消',
-      cancel: function () {
-        alert('确定要取消吗')
-      }
+                    +'</form>',
+       button: [
+          {
+              value: '提交',
+              callback: function () {
+              console.log("hahaha");
+              $('#form').submit();
+              },
+              autofocus: true
+          },
+          {
+              value: '取消',
+              callback: function () {
+                  alert('确定要取消吗')
+              }
+          }
+      ]
+      // cancelValue: '取消',
+      // cancel: function () {
+      //   alert('确定要取消吗')
+      // }
+
     });
 
     d.showModal();

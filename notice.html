@@ -24,6 +24,8 @@
   <link rel="stylesheet" type="text/css" href="plugins/bootstrap-switch/docs/css/highlight.css">
   <!-- switch -->
   <link rel="stylesheet" type="text/css" href="plugins/bootstrap-switch/docs/css/bootstrap-switch.css">
+  <!-- dialog -->
+  <link rel="stylesheet" type="text/css" href="plugins/dialog/ui-dialog.css">
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -180,8 +182,8 @@
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="index.html"><i class="fa fa-dashboard"></i> <span>活动广场</span> </a></li>
-        <li><a href="notice.html"><i class="fa fa-link"></i> <span>通知公告</span></a></li>
+        <li><a href="index.html"><i class="fa fa-dashboard"></i> <span>活动广场</span> </a></li>
+        <li class="active"><a href="notice.html"><i class="fa fa-link"></i> <span>通知公告</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>寝室卫生</span> <i class="fa fa-angle-left pull-right"></i></a>
           <ul class="treeview-menu">
@@ -204,11 +206,11 @@
         
         <div class="panel-tools">
                 
-                <i class="fa fa-thumb-tack"> 活动管理</i>
+                <i class="fa fa-thumb-tack"> 通知公告管理</i>
                 <div class="btn-group" style="float:right">
-                  <a class="btn">
-                    <i class="fa fa-plus" id="addOneRow"></i> 增加
-                  </a>
+                  <button class="btn btn-primary" data-event="add">
+                    <i class="fa fa-plus" id="addOneRow" ></i> 增加
+                  </button>
                   <a class="btn ajax" title="Ajax Request" onclick="window.location.href=window.location.href">
                     <i class="fa fa-spin fa-refresh"></i>
                   </a>
@@ -470,20 +472,11 @@
 <script src="dist/js/demo.js"></script>
 <!-- page script -->
 <script src="plugins/bootstrap-switch/docs/js/bootstrap-switch.js"></script>
+ <!-- dialog -->
+ <script src="plugins/dialog/dialog-min.js"></script>
 <script>
-  $(function(argument) {
-          $('[type="checkbox"]').bootstrapSwitch();
-      });
   $(function () {
     $("#example1").DataTable();
-    // $('#example2').DataTable({
-    //   "paging": true,
-    //   "lengthChange": false,
-    //   "searching": false,
-    //   "ordering": true,
-    //   "info": true,
-    //   "autoWidth": false
-    // });
   });
   $(document).ajaxStart(function() { Pace.restart(); });
             $('.ajax').click(function(){
@@ -495,8 +488,6 @@
 </script>
 <script type="text/javascript"> 
   
- 
-
  $(".delOneRow").click(function() { 
         if ($("tr").length < 2) { 
         alert("至少保留一个通知!"); 
@@ -506,19 +497,56 @@
         } 
         } 
   });
-   $("#addOneRow").click(function() { 
+   // $("#addOneRow").click(function() { 
 
-        // var tempTr = $("tr:first").clone(true); 
-        // $("tr:last").after(tempTr); 
-        // $("tr:last > td > #name").val("");//新添加行name为空 
-        // $("tr:last > td > #address").val("");//新添加行address为空 
-        
-
-
-        }); 
+   //  }); 
 
 $(document).ready(function(){
-   
+    $('button[data-event=add]').on('click', function () {
+    var d = dialog({
+      title: '增加通知',
+      width: 460,
+      content: '<form id="form" method="post">'
+                    + '<div class="form-group">'
+                        +'<label for="name" class="control-label">通知标题</label>'
+                        +'<input type="text" class="form-control" name="name" id="name" placeholder="请填写输入通知标题" data-validation="required" data-validation-error-msg="请填写通知标题">'
+                    +'</div>'
+                    +'<div class="form-group">'
+                        +'<label for="link" class="control-label">微信推文链接</label>'
+                        +'<input type="text" class="form-control" name="time" id="time" placeholder="请输入微信推文链接" data-validation="required" data-validation-error-msg="请填写链接">'
+                    +'</div>'
+                    +'<div class="form-group">'
+                        +'<label for="time" class="control-label">通知时间</label>'
+                        +'<input type="text" class="form-control" name="time" id="time" placeholder="请填写通知时间" data-validation="required" data-validation-error-msg="请填写通知时间">'
+                    +'</div>'
+                  +'</form>',
+      okValue: '确 定',
+      ok: function () {
+        // dialog()
+        // .title('提示2')
+        // .content('hello world')
+        // .button([{
+        //   value: '打开',
+        //   autofocus: true,
+        //   callback: function () {
+        //     dialog()
+        //     .title('提示')
+        //     .showModal();
+        //   }
+        // }])
+        
+        // .show();
+        return false;
+      },
+      cancelValue: '取消',
+      cancel: function () {
+        alert('确定要取消吗')
+      }
+    });
+
+    d.showModal();
+  });
+
 });
 </script> 
 

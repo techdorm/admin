@@ -210,7 +210,7 @@
                     <i class="fa fa-plus" id="addOneRow"></i> 增加
                   </a>
                   <a class="btn ajax" title="Ajax Request" onclick="window.location.href=window.location.href">
-                    <i class="fa fa-spin fa-refresh"></i>
+                    <i class="fa fa-refresh"></i>
                   </a>
               </div>
          </div>
@@ -231,28 +231,30 @@
               <table id="huodong" class="table table-bordered table-striped">
                 <thead>
                  <div class="row">
-                <tr>
-                  <th id="pic" class="col-md-2">活动海报</th>
-                  <th id="name" class="col-md-2">活动名称</th>
-                  <th id="begintime" class="col-md-2">开始时间</th>
-                  <th id="endtime" class="col-md-2">结束时间</th>
-                  <th id="resp" class="col-md-1">负责人</th>
-                  <th id="status" class="col-md-1">是否展示</th>
-                  <th id="operate" class="col-md-2">操作</th>                
-                </tr>
+	                <tr>
+  	                <th id="pic" class="col-md-1">活动海报</th>
+                    <th id="name" class="col-md-2">活动名称</th>
+                    <th id="link" class="col-md-1">活动链接</th>
+                    <th id="place" class="col-md-2">地点</th>
+                    <th id="begintime" class="col-md-1">开始时间</th>
+                    <th id="endtime" class="col-md-1">结束时间</th>
+                    <th id="status" class="col-md-1">是否展示</th>
+                    <th id="operate" class="col-md-2">操作</th>                  
+	                </tr>
                  <div>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Trident</td>
-                    <td>Internet Explorer 4.0</td>
-                    <td><input type="date" name="" value="2016-01-04"></td>
-                    <td><input type="date" name="" value="2016-09-04"></td>
-                    <th>Jhon</th>
+                    <td>Trident的uwua</td>
+                    <td>Internet Explorer 4.0fsvdf</td>
+                    <td>http://dajksdnsakjfnaskjn</td>
+                    <td>Jhonfdsfjsklf</td>
+                   <td>2016-01-04</td>
+                    <td>2016-09-04</td>
                     <td> <input  name="my-checkbox" class="form-control" type="checkbox" checked data-size="small"></td>
                     <td>
-                      <a class="btn btn-info" >
-                        <i class="fa fa-edit "></i>
+                      <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
+                        <i class="fa fa-edit" ></i>
                       </a>
                       <a class="btn btn-danger delOneRow">
                         <i class="fa fa-trash"></i>
@@ -261,14 +263,15 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>Webkit</td>
+                    <td>Webkitx</td>
                     <td>iPod Touch / iPhone</td>
-                    <td><input type="date" name="" value="2016-01-04"></td>
-                    <td><input type="date" name="" value="2016-09-04"></td>
-                    <th>Jhon</th>
+                    <td>http://dajksdnsakjfnaskjn</td>
+                    <td>ganjiacheng</td>
+                    <td>2016-01-04</td>
+                    <td>2016-09-04</td>
                     <td><input  name="my-checkbox" class="form-control" type="checkbox" checked data-size="small"></td>
                     <td> 
-                      <a class="btn btn-info">
+                      <a class="btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
                         <i class="fa fa-edit "></i>
                       </a>  
                       <a class="btn btn-danger delOneRow">
@@ -279,12 +282,13 @@
                   <tr>
                     <td>Webkit</td>
                     <td>S60</td>
-                    <td><input type="date" name="" value="2016-01-04"></td>
-                    <td><input type="date" name="" value="2016-09-04"></td>
-                    <th>Jhon</th>
+                    <td>http://dajksdnsakjfnaskjn</td>
+                    <td>Jhon</td>
+                    <td>2016-01-04</td>
+                    <td>2016-09-04</td>
                     <td><input name="my-checkbox" class="form-control" type="checkbox" checked data-size="small"></td>
                     <td>
-                      <a class="btn btn-info">
+                      <a class="btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
                         <i class="fa fa-edit "></i>
                       </a>     
                       <a class="btn btn-danger delOneRow">
@@ -295,12 +299,13 @@
                   <tr>
                     <td>Presto</td>
                     <td>Opera 7.0</td>
-                    <td><input type="date" name="" value="2016-01-04"></td>
-                    <td><input type="date" name="" value="2016-09-04"></td>
-                    <th>Jhon</th>
+                    <td>http://dajksdnsakjfnaskjn</td>
+                    <td>Jhon</td>
+                   <td>2016-01-04</td>
+                    <td>2016-09-04</td>
                     <td><input name="my-checkbox" class="form-control" type="checkbox" checked data-size="small"></td>
                     <td>
-                      <a class="btn btn-info">
+                      <a class="btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
                           <i class="fa fa-edit "></i>
                       </a>
                       <a class="btn btn-danger delOneRow">
@@ -311,12 +316,13 @@
                   <tr>
                     <td>Presto</td>
                     <td>Opera 7.5</td>
-                    <td><input type="date" name="" value="2016-01-04"></td>
-                    <td><input type="date" name="" value="2016-09-04"></td>
-                    <th>Jhon</th>
+                    <td>http://dajksdnsakjfnaskjn</td>
+                    <td>Jhon</td>
+                   <td>2016-01-04</td>
+                    <td>2016-09-04</td>
                     <td><input name="my-checkbox" class="form-control" type="checkbox" checked data-size="small"></td>
                     <td> 
-                      <a class="btn btn-info">
+                      <a class="btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
                           <i class="fa fa-edit "></i>
                       </a>
                       <a class="btn btn-danger delOneRow">
@@ -327,12 +333,13 @@
                   <tr>
                     <td>Presto</td>
                     <td>Opera 8.0</td>
-                    <td><input type="date" name="" value="2016-01-04"></td>
-                    <td><input type="date" name="" value="2016-09-04"></td>
-                    <th>Jhon</th>
+                    <td>http://dajksdnsakjfnaskjn</td>
+                    <td>Jhon</td>
+                   <td>2016-01-04</td>
+                    <td>2016-09-04</td>
                     <td><input name="my-checkbox" class="form-control" type="checkbox" checked data-size="small"></td>
                     <td> 
-                      <a class="btn btn-info">
+                      <a class="btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
                           <i class="fa fa-edit "></i>
                       </a>
                       <a class="btn btn-danger delOneRow">
@@ -343,12 +350,13 @@
                   <tr>
                     <td>Presto</td>
                     <td>Opera 8.5</td>
-                    <td><input type="date" name="" value="2016-01-04"></td>
-                    <td><input type="date" name="" value="2016-09-04"></td>
-                    <th>Jhon</th>
+                    <td>http://dajksdnsakjfnaskjn</td>
+                    <td>Jhon</td>
+                   <td>2016-01-04</td>
+                    <td>2016-09-04</td>
                     <td><input name="my-checkbox" class="form-control" type="checkbox" checked data-size="small"></td>
                     <td>
-                      <a class="btn btn-info">
+                      <a class="btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
                           <i class="fa fa-edit "></i>
                       </a>
                       <a class="btn btn-danger delOneRow">
@@ -356,128 +364,19 @@
                       </a>
                     </td>
                   </tr>
-                  <tr>
-                    <td>Presto</td>
-                    <td>Opera 9.0</td>
-                    <td><input type="date" name="" value="2016-01-04"></td>
-                    <td><input type="date" name="" value="2016-09-04"></td>
-                    <th>Jhon</th>
-                    <td><input name="my-checkbox" class="form-control" type="checkbox" checked data-size="small"></td>
-                    <td>
-                      <a class="btn btn-info">
-                          <i class="fa fa-edit "></i>
-                      </a>   
-                      <a class="btn btn-danger delOneRow">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>KHTML</td>
-                    <td>Konqureror 3.1</td>
-                    <td><input type="date" name="" value="2016-01-04"></td>
-                    <td><input type="date" name="" value="2016-09-04"></td>
-                    <th>Jhon</th>
-                    <td><input name="my-checkbox" class="form-control" type="checkbox" checked data-size="small"></td>
-                    <td id="operate">
-                      <a class="btn btn-info">
-                          <i class="fa fa-edit "></i>
-                      </a> 
-                      <a class="btn btn-danger delOneRow">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>KHTML</td>
-                    <td>Konqureror 3.5</td>
-                    <td><input type="date" name="" value="2016-01-04"></td>
-                    <td><input type="date" name="" value="2016-09-04"></td>
-                    <th>Jhon</th>
-                    <td><input name="my-checkbox" class="form-control" type="checkbox" checked data-size="small"></td>
-                    <td>
-                      <a class="btn btn-info">
-                          <i class="fa fa-edit "></i>
-                      </a> 
-                      <a class="btn btn-danger delOneRow">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Tasman</td>
-                    <td>Internet Explorer 5.2</td>
-                    <td><input type="date" name="" value="2016-01-04"></td>
-                    <td><input type="date" name="" value="2016-09-04"></td>
-                    <th>Jhon</th>
-                    <td><input name="my-checkbox" class="form-control" type="checkbox" checked data-size="small"></td>
-                    <td>
-                      <a class="btn btn-info">
-                          <i class="fa fa-edit "></i>
-                      </a>
-                      <a class="btn btn-danger delOneRow">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Misc</td>
-                    <td>NetFront 3.1</td>
-                    <td><input type="date" name="" value="2016-01-04"></td>
-                    <td><input type="date" name="" value="2016-09-04"></td>
-                    <th>Jhon</th>
-                    <td><input name="my-checkbox" class="form-control" type="checkbox" checked data-size="small"></td>
-                    <td> 
-                      <a class="btn btn-info">
-                          <i class="fa fa-edit "></i>
-                      </a>  
-                      <a class="btn btn-danger delOneRow">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Misc</td>
-                    <td>Links</td>
-                    <td><input type="date" name="" value="2016-01-04"></td>
-                    <td><input type="date" name="" value="2016-09-04"></td>
-                    <th>Jhon</th>
-                    <td><input name="my-checkbox" class="form-control" type="checkbox" checked data-size="small"></td>
-                    <td>
-                      <a class="btn btn-info">
-                          <i class="fa fa-edit "></i>
-                      </a>
-                      <a class="btn btn-danger delOneRow">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Misc</td>
-                    <td>Lynx</td>
-                    <td><input type="date" name="" value="2016-01-04"></td>
-                    <td><input type="date" name="" value="2016-09-04"></td>
-                    <th>Jhon</th>
-                    <td><input name="my-checkbox" class="form-control" type="checkbox" checked data-size="small"></td>
-                    <td> 
-                      <a class="btn btn-info">
-                          <i class="fa fa-edit "></i>
-                      </a>
-                      <a class="btn btn-danger delOneRow">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                    </td>
-                  </tr>
+                  
+                 
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th id="pic" class="col-md-2">活动海报</th>
+                  <th id="pic" class="col-md-1">活动海报</th>
                   <th id="name" class="col-md-2">活动名称</th>
-                  <th id="begintime" class="col-md-2">开始时间</th>
-                  <th id="endtime" class="col-md-2">结束时间</th>
-                  <th id="resp" class="col-md-1">负责人</th>
+                  <th id="link" class="col-md-1">活动链接</th>
+                  <th id="place" class="col-md-2">地点</th>
+                  <th id="begintime" class="col-md-1">开始时间</th>
+                  <th id="endtime" class="col-md-1">结束时间</th>
                   <th id="status" class="col-md-1">是否展示</th>
-                  <th id="operate" class="col-md-2">操作</th>   
+                  <th id="operate" class="col-md-2">操作</th>            
                 </tr>
                 </tfoot>
               </table>
@@ -574,15 +473,15 @@
     // console.log(event); // jQuery event  
     console.log(state); // true | false  
   });
-  //datatable设置
+  // datatable设置
   $(function () {
-    $("#huodong").DataTable();
-    //   "paging": true, 分页
-    //   "lengthChange": false, 
-    //   "searching": false, 搜索
-    //   "ordering": true, 排序
-    //   "info": true, 
-    //   "autoWidth": false 自适应
+    // $("#huodong").DataTable();
+  //   //   "paging": true, 分页
+  //   //   "lengthChange": false, 
+  //   //   "searching": false, 搜索
+  //   //   "ordering": true, 排序
+  //   //   "info": true, 
+  //   //   "autoWidth": false 自适应
  
   });
   // pace刷新
@@ -607,9 +506,28 @@
         } 
         } 
   });
-   $(".fa-edit").click(function() { 
-   		console(this.parent);
-        }); 
+ 
+function edit(rowIndex) {
+  var rowHtml = document.getElementById("huodong").rows[rowIndex];
+  rowHtml.cells[0].innerHTML = "<input style='width:100px'type='text' value='"+rowHtml.cells[0].innerText+"'name='c0' >";
+  rowHtml.cells[1].innerHTML = "<input style='width:100px'type='text' value='"+rowHtml.cells[1].innerText+"'name='c0' >";
+  rowHtml.cells[2].innerHTML = "<input style='width:100px'type='text' value='"+rowHtml.cells[2].innerText+"'name='c0'>";
+  rowHtml.cells[3].innerHTML = "<input style='width:100px'type='text' value='"+rowHtml.cells[3].innerText+"'name='c0'>";
+  rowHtml.cells[4].innerHTML = "<input type='date' value='"+rowHtml.cells[4].innerText+"'name='c0'>";
+  rowHtml.cells[5].innerHTML = "<input type='date' value='"+rowHtml.cells[5].innerText+"'name='c0'>";
+  rowHtml.cells[7].innerHTML = "<a href='#' onclick='save(this.parentNode.parentNode.rowIndex)' class='btn btn-success'> <i class='fa fa-floppy-o' ></i></a>"+"<a href='#' class='btn btn-danger delOneRow'><i class='fa fa-trash'></i></a>";
+  
+}
+function save(rowIndex){
+  var rowHtml = document.getElementById("huodong").rows[rowIndex];
+  for(var i = 0;i<6;i++){
+  rowHtml.cells[i].innerHTML = rowHtml.cells[i].children[0].value;
+  }
+ 
+
+  rowHtml.cells[7].innerHTML = "<a href='#' onclick='edit(this.parentNode.parentNode.rowIndex)' class='edit btn btn-info'> <i class='fa fa-edit'></i></a> "+ "<a href='#' class='btn btn-danger delOneRow'><i class='fa fa-trash'></i></a>";
+
+}
 
      /*Datatables 服务器处理 http://datatables.club/example/server_side/simple.html*/
 // $(document).ready(function() {

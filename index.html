@@ -244,12 +244,13 @@
                  <div>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Trident的uwua</td>
+                    <tr>
+                    <td> <div id="localImag" width="50px" height="50px"><img id="preview" style="display: block; width: 50px; height: 50px;"></div>
+                    </td>
                     <td>Internet Explorer 4.0fsvdf</td>
                     <td>http://dajksdnsakjfnaskjn</td>
                     <td>Jhonfdsfjsklf</td>
-                   <td>2016-01-04</td>
+                    <td>2016-01-04</td>
                     <td>2016-09-04</td>
                     <td> <input  name="my-checkbox" class="form-control" type="checkbox" checked data-size="small"></td>
                     <td>
@@ -263,7 +264,8 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>Webkitx</td>
+                     <td> <div id="localImag" width="50px" height="50px"><img id="preview" style="display: block; width: 50px; height: 50px;"></div>
+                    </td>
                     <td>iPod Touch / iPhone</td>
                     <td>http://dajksdnsakjfnaskjn</td>
                     <td>ganjiacheng</td>
@@ -280,7 +282,8 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>Webkit</td>
+                     <td> <div id="localImag" width="50px" height="50px"><img id="preview" style="display: block; width: 50px; height: 50px;"></div>
+                    </td>
                     <td>S60</td>
                     <td>http://dajksdnsakjfnaskjn</td>
                     <td>Jhon</td>
@@ -297,7 +300,8 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>Presto</td>
+                     <td> <div id="localImag" width="50px" height="50px"><img id="preview" style="display: block; width: 50px; height: 50px;"></div>
+                    </td>
                     <td>Opera 7.0</td>
                     <td>http://dajksdnsakjfnaskjn</td>
                     <td>Jhon</td>
@@ -314,7 +318,8 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>Presto</td>
+                     <td> <div id="localImag" width="50px" height="50px"><img id="preview" style="display: block; width: 50px; height: 50px;"></div>
+                    </td>
                     <td>Opera 7.5</td>
                     <td>http://dajksdnsakjfnaskjn</td>
                     <td>Jhon</td>
@@ -331,7 +336,8 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>Presto</td>
+                     <td> <div id="localImag" width="50px" height="50px"><img id="preview" style="display: block; width: 50px; height: 50px;"></div>
+                    </td>
                     <td>Opera 8.0</td>
                     <td>http://dajksdnsakjfnaskjn</td>
                     <td>Jhon</td>
@@ -348,7 +354,8 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>Presto</td>
+                    <td> <div id="localImag" width="50px" height="50px"><img id="preview" style="display: block; width: 50px; height: 50px;"></div>
+                    </td>
                     <td>Opera 8.5</td>
                     <td>http://dajksdnsakjfnaskjn</td>
                     <td>Jhon</td>
@@ -475,7 +482,7 @@
   });
   // datatable设置
   $(function () {
-    // $("#huodong").DataTable();
+    $("#huodong").DataTable();
   //   //   "paging": true, 分页
   //   //   "lengthChange": false, 
   //   //   "searching": false, 搜索
@@ -507,9 +514,10 @@
         } 
   });
  
+
 function edit(rowIndex) {
   var rowHtml = document.getElementById("huodong").rows[rowIndex];
-  rowHtml.cells[0].innerHTML = "<input style='width:100px'type='text' value='"+rowHtml.cells[0].innerText+"'name='c0' >";
+  rowHtml.cells[0].innerHTML = "<div id='localImag' width='50px'  height='50px'><img id='preview' style='display: block; width: 50px; height: 50px;'></div>"+"<input style='width:100px'type='file' id='doc' onchange='javascript:setImagePreview();' value='"+rowHtml.cells[0].innerText+"'name='c0' >";
   rowHtml.cells[1].innerHTML = "<input style='width:100px'type='text' value='"+rowHtml.cells[1].innerText+"'name='c0' >";
   rowHtml.cells[2].innerHTML = "<input style='width:100px'type='text' value='"+rowHtml.cells[2].innerText+"'name='c0'>";
   rowHtml.cells[3].innerHTML = "<input style='width:100px'type='text' value='"+rowHtml.cells[3].innerText+"'name='c0'>";
@@ -520,23 +528,78 @@ function edit(rowIndex) {
 }
 function save(rowIndex){
   var rowHtml = document.getElementById("huodong").rows[rowIndex];
-  for(var i = 0;i<6;i++){
+  for(var i = 1;i<6;i++){
   rowHtml.cells[i].innerHTML = rowHtml.cells[i].children[0].value;
   }
+  console.log(rowHtml);
+  console.log(rowHtml.cells[0].children[1].value);
+  console.log(rowHtml.cells[1].innerHTML);
+  console.log(rowHtml.cells[2].innerHTML);
+  console.log(rowHtml.cells[3].innerHTML);
+  console.log(rowHtml.cells[4].innerHTML);
+  console.log(rowHtml.cells[5].innerHTML);
+  // console.log(rowHtml.cells[6].children[1].children[3].value);
  
+  
 
   rowHtml.cells[7].innerHTML = "<a href='#' onclick='edit(this.parentNode.parentNode.rowIndex)' class='edit btn btn-info'> <i class='fa fa-edit'></i></a> "+ "<a href='#' class='btn btn-danger delOneRow'><i class='fa fa-trash'></i></a>";
-
+  // ajax
+   // $.post("upload.php",{
+   //              pic:rowHtml.cells[0].children[1].value,
+   //              name: rowHtml.cells[1].innerHTML,
+   //              link: rowHtml.cells[2].innerHTML,
+   //              place: rowHtml.cells[3].innerHTML,
+   //              begintime:rowHtml.cells[4].innerHTML,
+   //              endtime:rowHtml.cells[5].innerHTML,
+   //              status: 
+                
+   //          },function(data){
+   //              alert(data);
+   //          });
 }
 
-     /*Datatables 服务器处理 http://datatables.club/example/server_side/simple.html*/
-// $(document).ready(function() {
-//        $('#example').dataTable( {
-//            "processing": true,
-//            "serverSide": true,
-//            "ajax": "http://dt.thxopen.com/example/resources/server_processing_customCUrl.php"
-//        } );
-//    } );
+//下面用于图片上传预览功能
+function setImagePreview(avalue) {
+var docObj=document.getElementById("doc");
+
+var imgObjPreview=document.getElementById("preview");
+if(docObj.files &&docObj.files[0])
+{
+//火狐下，直接设img属性
+imgObjPreview.style.display = 'block';
+imgObjPreview.style.width = '50px';
+imgObjPreview.style.height = '50px'; 
+// imgObjPreview.src = docObj.files[0].getAsDataURL();
+
+//火狐7以上版本不能用上面的getAsDataURL()方式获取，需要一下方式
+imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+}
+else
+{
+//IE下，使用滤镜
+  docObj.select();
+  var imgSrc = document.selection.createRange().text;
+  var localImagId = document.getElementById("localImag");
+//必须设置初始大小
+  localImagId.style.width = "50px";
+  localImagId.style.height = "50px";
+//图片异常的捕捉，防止用户修改后缀来伪造图片
+  try{
+  localImagId.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+  localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+  }
+  catch(e)
+  {
+  alert("您上传的图片格式不正确，请重新选择!");
+  return false;
+  }
+imgObjPreview.style.display = 'none';
+document.selection.empty();
+}
+return true;
+}
+
+
 </script> 
 
 

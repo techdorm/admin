@@ -359,7 +359,7 @@
                     <td>Opera 8.5</td>
                     <td>http://dajksdnsakjfnaskjn</td>
                     <td>Jhon</td>
-                   <td>2016-01-04</td>
+                    <td>2016-01-04</td>
                     <td>2016-09-04</td>
                     <td><input name="my-checkbox" class="form-control" type="checkbox" checked data-size="small"></td>
                     <td>
@@ -526,6 +526,7 @@ function edit(rowIndex) {
   rowHtml.cells[7].innerHTML = "<a href='#' onclick='save(this.parentNode.parentNode.rowIndex)' class='btn btn-success'> <i class='fa fa-floppy-o' ></i></a>"+"<a href='#' class='btn btn-danger delOneRow'><i class='fa fa-trash'></i></a>";
   
 }
+
 function save(rowIndex){
   var rowHtml = document.getElementById("huodong").rows[rowIndex];
   for(var i = 1;i<6;i++){
@@ -538,24 +539,25 @@ function save(rowIndex){
   console.log(rowHtml.cells[3].innerHTML);
   console.log(rowHtml.cells[4].innerHTML);
   console.log(rowHtml.cells[5].innerHTML);
-  // console.log(rowHtml.cells[6].children[1].children[3].value);
+  console.log(rowHtml.cells[6].getElementsByTagName('input')[0].checked);
  
   
-
   rowHtml.cells[7].innerHTML = "<a href='#' onclick='edit(this.parentNode.parentNode.rowIndex)' class='edit btn btn-info'> <i class='fa fa-edit'></i></a> "+ "<a href='#' class='btn btn-danger delOneRow'><i class='fa fa-trash'></i></a>";
   // ajax
-   // $.post("upload.php",{
-   //              pic:rowHtml.cells[0].children[1].value,
-   //              name: rowHtml.cells[1].innerHTML,
-   //              link: rowHtml.cells[2].innerHTML,
-   //              place: rowHtml.cells[3].innerHTML,
-   //              begintime:rowHtml.cells[4].innerHTML,
-   //              endtime:rowHtml.cells[5].innerHTML,
-   //              status: 
-                
-   //          },function(data){
-   //              alert(data);
-   //          });
+   $.post("upload.php",{
+                pic:rowHtml.cells[0].children[1].value,
+                name: rowHtml.cells[1].innerHTML,
+                link: rowHtml.cells[2].innerHTML,
+                place: rowHtml.cells[3].innerHTML,
+                begintime:rowHtml.cells[4].innerHTML,
+                endtime:rowHtml.cells[5].innerHTML,
+                status: rowHtml.cells[6].getElementsByTagName('input')[0].checked,
+            },function(data){
+            alert(data);
+            console.log("success");
+          });
+  
+            
 }
 
 //下面用于图片上传预览功能

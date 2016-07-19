@@ -268,7 +268,6 @@
                       <a class="btn btn-danger delOneRow">
                         <i class="fa fa-trash"></i>
                       </a>
-                      
                     </td>
                   </tr>
                   <tr>
@@ -527,7 +526,7 @@ function edit(rowIndex) {
   var rowHtml = document.getElementById("huodong").rows[rowIndex];
   rowHtml.cells[0].innerHTML = "<div id='localImag' width='50px'  height='50px'><img id='preview' style='display: block; width: 50px; height: 50px;'></div>"+"<input style='width:100px'type='file' id='doc' onchange='javascript:setImagePreview();' value='"+rowHtml.cells[0].innerText+"'name='c0' >";
   rowHtml.cells[1].innerHTML = "<input style='width:100px'type='text' value='"+rowHtml.cells[1].innerText+"'name='c0' >";
-  rowHtml.cells[2].innerHTML = "<input style='width:12S0px'type='text' value='"+rowHtml.cells[2].innerText+"'name='c0'>";
+  rowHtml.cells[2].innerHTML = "<input style='width:100px'type='text' value='"+rowHtml.cells[2].innerText+"'name='c0'>";
   rowHtml.cells[3].innerHTML = "<input style='width:100px'type='text' value='"+rowHtml.cells[3].innerText+"'name='c0'>";
   rowHtml.cells[4].innerHTML = "<input type='date' value='"+rowHtml.cells[4].innerText+"'name='c0'>";
   rowHtml.cells[5].innerHTML = "<input type='date' value='"+rowHtml.cells[5].innerText+"'name='c0'>";

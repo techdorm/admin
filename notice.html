@@ -26,7 +26,15 @@
   <link rel="stylesheet" type="text/css" href="plugins/bootstrap-switch/docs/css/bootstrap-switch.css">
   <!-- dialog -->
   <link rel="stylesheet" type="text/css" href="plugins/dialog/ui-dialog.css">
-
+  <style type="text/css">
+     .fa-edit{
+    width:11px;
+   }
+   .table>tbody>tr>td{
+      vertical-align: middle;
+      padding: 5px;
+   }
+  </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -230,10 +238,10 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="tongzhi" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th id="pic">通知名称</th>
+                  <th id="title">通知名称</th>
                   <th id="link">通知链接</th>
                   <th id="time">创建时间</th>
                   <th id="operate">操作</th>                
@@ -244,10 +252,13 @@
                   <td>Trident</td>
                   <td>Internet Explorer 4.0</td>
                   <td>Webkit</td>
-                  <td>   
-                    <a class="btn btn-danger delOneRow">
-                      <i class="fa fa-trash"></i>
-                    </a>
+                  <td>
+                    <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
+                        <i class="fa fa-edit" ></i>
+                      </a>
+                      <a class="btn btn-danger delOneRow">
+                        <i class="fa fa-trash"></i>
+                      </a>
                   </td>
                 </tr>
                 <tr>
@@ -255,9 +266,12 @@
                   <td>iPod Touch / iPhone</td>
                   <td>iPod</td>
                   <td> 
-                    <a class="btn btn-danger delOneRow">
-                      <i class="fa fa-trash"></i>
-                    </a>
+                    <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
+                        <i class="fa fa-edit" ></i>
+                      </a>
+                      <a class="btn btn-danger delOneRow">
+                        <i class="fa fa-trash"></i>
+                      </a>
                   </td>
                 </tr>
                 <tr>
@@ -265,9 +279,12 @@
                   <td>S60</td>
                   <td>S60</td>
                   <td>    
-                    <a class="btn btn-danger delOneRow">
-                      <i class="fa fa-trash"></i>
-                    </a>
+                    <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
+                        <i class="fa fa-edit" ></i>
+                      </a>
+                      <a class="btn btn-danger delOneRow">
+                        <i class="fa fa-trash"></i>
+                      </a>
                   </td>
                 </tr>
                 <tr>
@@ -275,9 +292,12 @@
                   <td>Opera 7.0</td>
                   <td>Win 95+ / OSX.1+</td>
                   <td>
-                    <a class="btn btn-danger delOneRow">
-                      <i class="fa fa-trash"></i>
-                    </a>
+                    <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
+                        <i class="fa fa-edit" ></i>
+                      </a>
+                      <a class="btn btn-danger delOneRow">
+                        <i class="fa fa-trash"></i>
+                      </a>
                   </td>
                 </tr>
                 <tr>
@@ -285,9 +305,12 @@
                   <td>Opera 7.5</td>
                   <td>Win 95+ / OSX.2+</td>
                   <td> 
-                    <a class="btn btn-danger delOneRow">
-                      <i class="fa fa-trash"></i>
-                    </a>
+                    <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
+                        <i class="fa fa-edit" ></i>
+                      </a>
+                      <a class="btn btn-danger delOneRow">
+                        <i class="fa fa-trash"></i>
+                      </a>
                   </td>
                 </tr>
                 <tr>
@@ -295,9 +318,12 @@
                   <td>Opera 8.0</td>
                   <td>Win 95+ / OSX.2+</td>
                   <td> 
-                    <a class="btn btn-danger delOneRow">
-                      <i class="fa fa-trash"></i>
-                    </a>
+                    <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
+                        <i class="fa fa-edit" ></i>
+                      </a>
+                      <a class="btn btn-danger delOneRow">
+                        <i class="fa fa-trash"></i>
+                      </a>
                   </td>
                 </tr>
                 <tr>
@@ -305,19 +331,25 @@
                   <td>Opera 8.5</td>
                   <td>Win 95+ / OSX.2+</td>
                   <td>
-                    <a class="btn btn-danger delOneRow">
-                      <i class="fa fa-trash"></i>
-                    </a>
+                    <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
+                        <i class="fa fa-edit" ></i>
+                      </a>
+                      <a class="btn btn-danger delOneRow">
+                        <i class="fa fa-trash"></i>
+                      </a>
                   </td>
                 </tr>
                 <tr>
-                  <td>Presto</td>
-                  <td>Opera 9.0</td>
+                  <td>Prestoieurieref</td>
+                  <td>Opera 9.0fgdgfdgfdghfhddgfdgd</td>
                   <td>Win 95+ / OSX.3+</td>
                   <td>   
-                    <a class="btn btn-danger delOneRow">
-                      <i class="fa fa-trash"></i>
-                    </a>
+                    <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
+                        <i class="fa fa-edit" ></i>
+                      </a>
+                      <a class="btn btn-danger delOneRow">
+                        <i class="fa fa-trash"></i>
+                      </a>
                   </td>
                 </tr>
                 <tr>
@@ -325,9 +357,12 @@
                   <td>Konqureror 3.1</td>
                   <td>KDE 3.1</td>
                   <td id="operate"> 
-                    <a class="btn btn-danger delOneRow">
-                      <i class="fa fa-trash"></i>
-                    </a>
+                    <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
+                        <i class="fa fa-edit" ></i>
+                      </a>
+                      <a class="btn btn-danger delOneRow">
+                        <i class="fa fa-trash"></i>
+                      </a>
                   </td>
                 </tr>
                 <tr>
@@ -335,9 +370,12 @@
                   <td>Konqureror 3.5</td>
                   <td>KDE 3.5</td>
                   <td> 
-                    <a class="btn btn-danger delOneRow">
-                      <i class="fa fa-trash"></i>
-                    </a>
+                    <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
+                        <i class="fa fa-edit" ></i>
+                      </a>
+                      <a class="btn btn-danger delOneRow">
+                        <i class="fa fa-trash"></i>
+                      </a>
                   </td>
                 </tr>
                 <tr>
@@ -345,9 +383,12 @@
                   <td>Internet Explorer 5.2</td>
                   <td>Mac OS 8-X</td>
                   <td>
-                    <a class="btn btn-danger delOneRow">
-                      <i class="fa fa-trash"></i>
-                    </a>
+                    <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
+                        <i class="fa fa-edit" ></i>
+                      </a>
+                      <a class="btn btn-danger delOneRow">
+                        <i class="fa fa-trash"></i>
+                      </a>
                   </td>
                 </tr>
                 <tr>
@@ -355,9 +396,12 @@
                   <td>NetFront 3.1</td>
                   <td>Embedded devices</td>
                   <td>   
-                    <a class="btn btn-danger delOneRow">
-                      <i class="fa fa-trash"></i>
-                    </a>
+                    <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
+                        <i class="fa fa-edit" ></i>
+                      </a>
+                      <a class="btn btn-danger delOneRow">
+                        <i class="fa fa-trash"></i>
+                      </a>
                   </td>
                 </tr>
                 <tr>
@@ -365,9 +409,12 @@
                   <td>Links</td>
                   <td>Text only</td>
                   <td>
-                    <a class="btn btn-danger delOneRow">
-                      <i class="fa fa-trash"></i>
-                    </a>
+                    <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
+                        <i class="fa fa-edit" ></i>
+                      </a>
+                      <a class="btn btn-danger delOneRow">
+                        <i class="fa fa-trash"></i>
+                      </a>
                   </td>
                 </tr>
                 <tr>
@@ -375,17 +422,20 @@
                   <td>Lynx</td>
                   <td>Text only</td>
                   <td> 
-                    <a class="btn btn-danger delOneRow">
-                      <i class="fa fa-trash"></i>
-                    </a>
+                    <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
+                        <i class="fa fa-edit" ></i>
+                      </a>
+                      <a class="btn btn-danger delOneRow">
+                        <i class="fa fa-trash"></i>
+                      </a>
                   </td>
                 </tr>
                 </tbody>
                 <tfoot>
                 <tr>
                   <th>通知名称</th>
-                  <th>通知时间</th>
                   <th>通知链接</th>
+                  <th>通知时间</th>
                   <th>操作</th>
                 </tr>
                 </tfoot>
@@ -497,9 +547,41 @@
         } 
         } 
   });
-   // $("#addOneRow").click(function() { 
 
-   //  }); 
+function edit(rowIndex) {
+  var rowHtml = document.getElementById("tongzhi").rows[rowIndex];
+  rowHtml.cells[0].innerHTML = "<input  style='width:200px' type='text' value='"+rowHtml.cells[0].innerText+"'name='c0' >";
+  rowHtml.cells[1].innerHTML = "<input  type='text' value='"+rowHtml.cells[1].innerText+"'name='c0' >";
+  rowHtml.cells[2].innerHTML = "<input type='date' value='"+rowHtml.cells[2].innerText+"'name='c0'>";
+  rowHtml.cells[3].innerHTML = "<a href='#' onclick='save(this.parentNode.parentNode.rowIndex)' class='btn btn-success'> <i class='fa fa-floppy-o' ></i></a>"+"<a href='#' class='btn btn-danger delOneRow'><i class='fa fa-trash'></i></a>";
+}
+
+
+function save(rowIndex){
+  var rowHtml = document.getElementById("tongzhi").rows[rowIndex];
+  for(var i = 0;i<3;i++){
+  rowHtml.cells[i].innerHTML = rowHtml.cells[i].children[0].value;
+  }
+  console.log(rowHtml);
+  console.log(rowHtml.cells[0].innerHTML);
+  console.log(rowHtml.cells[1].innerHTML);
+  console.log(rowHtml.cells[2].innerHTML);
+  
+  rowHtml.cells[3].innerHTML = "<a href='#' onclick='edit(this.parentNode.parentNode.rowIndex)' class='edit btn btn-info'> <i class='fa fa-edit'></i></a> "+ "<a href='#' class='btn btn-danger delOneRow'><i class='fa fa-trash'></i></a>";
+  // ajax
+   $.post("update.php",{
+                title: rowHtml.cells[0].innerHTML,
+                link: rowHtml.cells[1].innerHTML,             
+                time: rowHtml.cells[2].innerHTML,
+            },function(data){
+            alert(data);
+            console.log("success");
+          });
+  
+            
+}
+
+//add
 
 $(document).ready(function(){
     $('button[data-event=add]').on('click', function () {
@@ -540,9 +622,7 @@ $(document).ready(function(){
       // cancel: function () {
       //   alert('确定要取消吗')
       // }
-
     });
-
     d.showModal();
   });
 

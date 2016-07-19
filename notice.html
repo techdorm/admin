@@ -212,7 +212,7 @@
                     <i class="fa fa-plus" id="addOneRow" ></i> 增加
                   </button>
                   <a class="btn ajax" title="Ajax Request" onclick="window.location.href=window.location.href">
-                    <i class="fa fa-spin fa-refresh"></i>
+                    <i class="fa fa-refresh"></i>
                   </a>
               </div>
          </div>
@@ -234,8 +234,8 @@
                 <thead>
                 <tr>
                   <th id="pic">通知名称</th>
-                  <th id="time">创建时间</th>
                   <th id="link">通知链接</th>
+                  <th id="time">创建时间</th>
                   <th id="operate">操作</th>                
                 </tr>
                 </thead>
@@ -505,7 +505,7 @@ $(document).ready(function(){
     $('button[data-event=add]').on('click', function () {
     var d = dialog({
       title: '增加通知',
-      width: 460,
+      width: 500,
       content: '<form action=" " id="form" method="post">'
                     + '<div class="form-group">'
                         +'<label for="name" class="control-label">通知标题</label>'

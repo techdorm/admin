@@ -222,7 +222,7 @@
         
         <div class="panel-tools">
                 
-                <i class="fa fa-thumb-tack"> 公告列表管理</i>
+                <i class="fa fa-thumb-tack"> 通知轮播图管理</i>
                 <div class="btn-group" style="float:right">
                   <button class="btn btn-primary" data-event="add">
                     <i class="fa fa-plus" id="addOneRow" ></i> 增加
@@ -246,20 +246,16 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="tongzhi" class="table table-bordered table-striped">
+              <table id="tongzhipic" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th id="title">通知名称</th>
-                  <th id="link">通知链接</th>
-                  <th id="time">创建时间</th>
-                  <th id="operate">操作</th>                
+                  <th id="pic" class="col-xs-8">通知图片</th>
+                  <th id="operate" class="col-xs-4">操作</th>                
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td>Trident</td>
-                  <td>Internet Explorer 4.0</td>
-                  <td>Webkit</td>
+                  <td><div id="localImag" width="50px" height="50px"><img id="preview" style="display: block; width: 200px; height: 100px;"></div></td>
                   <td>
                     <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
                         <i class="fa fa-edit" ></i>
@@ -270,9 +266,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>Webkit</td>
-                  <td>iPod Touch / iPhone</td>
-                  <td>iPod</td>
+                  <td><div id="localImag" width="50px" height="50px"><img id="preview" style="display: block; width: 200px; height: 100px;"></div></td>
                   <td> 
                     <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
                         <i class="fa fa-edit" ></i>
@@ -283,9 +277,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>Webkit</td>
-                  <td>S60</td>
-                  <td>S60</td>
+                  <td><div id="localImag" width="50px" height="50px"><img id="preview" style="display: block; width: 200px; height: 100px;"></div></td>
                   <td>    
                     <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
                         <i class="fa fa-edit" ></i>
@@ -296,9 +288,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>Presto</td>
-                  <td>Opera 7.0</td>
-                  <td>Win 95+ / OSX.1+</td>
+                  <td><div id="localImag" width="50px" height="50px"><img id="preview" style="display: block; width: 200px; height: 100px;"></div></td>
                   <td>
                     <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
                         <i class="fa fa-edit" ></i>
@@ -309,9 +299,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>Presto</td>
-                  <td>Opera 7.5</td>
-                  <td>Win 95+ / OSX.2+</td>
+                  <td><div id="localImag" width="50px" height="50px"><img id="preview" style="display: block; width: 200px; height: 100px;"></div></td>
                   <td> 
                     <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
                         <i class="fa fa-edit" ></i>
@@ -322,113 +310,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>Presto</td>
-                  <td>Opera 8.0</td>
-                  <td>Win 95+ / OSX.2+</td>
-                  <td> 
-                    <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
-                        <i class="fa fa-edit" ></i>
-                      </a>
-                      <a class="btn btn-danger delOneRow">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Presto</td>
-                  <td>Opera 8.5</td>
-                  <td>Win 95+ / OSX.2+</td>
-                  <td>
-                    <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
-                        <i class="fa fa-edit" ></i>
-                      </a>
-                      <a class="btn btn-danger delOneRow">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Prestoieurieref</td>
-                  <td>Opera 9.0fgdgfdgfdghfhddgfdgd</td>
-                  <td>Win 95+ / OSX.3+</td>
-                  <td>   
-                    <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
-                        <i class="fa fa-edit" ></i>
-                      </a>
-                      <a class="btn btn-danger delOneRow">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>KHTML</td>
-                  <td>Konqureror 3.1</td>
-                  <td>KDE 3.1</td>
-                  <td id="operate"> 
-                    <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
-                        <i class="fa fa-edit" ></i>
-                      </a>
-                      <a class="btn btn-danger delOneRow">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>KHTML</td>
-                  <td>Konqureror 3.5</td>
-                  <td>KDE 3.5</td>
-                  <td> 
-                    <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
-                        <i class="fa fa-edit" ></i>
-                      </a>
-                      <a class="btn btn-danger delOneRow">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Tasman</td>
-                  <td>Internet Explorer 5.2</td>
-                  <td>Mac OS 8-X</td>
-                  <td>
-                    <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
-                        <i class="fa fa-edit" ></i>
-                      </a>
-                      <a class="btn btn-danger delOneRow">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Misc</td>
-                  <td>NetFront 3.1</td>
-                  <td>Embedded devices</td>
-                  <td>   
-                    <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
-                        <i class="fa fa-edit" ></i>
-                      </a>
-                      <a class="btn btn-danger delOneRow">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Misc</td>
-                  <td>Links</td>
-                  <td>Text only</td>
-                  <td>
-                    <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
-                        <i class="fa fa-edit" ></i>
-                      </a>
-                      <a class="btn btn-danger delOneRow">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Misc</td>
-                  <td>Lynx</td>
-                  <td>Text only</td>
+                  <td><div id="localImag" width="50px" height="50px"><img id="preview" style="display: block; width: 200px; height: 100px;"></div></td>
                   <td> 
                     <a class="edit btn btn-info" onclick="edit(this.parentNode.parentNode.rowIndex)">
                         <i class="fa fa-edit" ></i>
@@ -441,9 +323,7 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>通知名称</th>
-                  <th>通知链接</th>
-                  <th>通知时间</th>
+                  <th>通知图片</th>
                   <th>操作</th>
                 </tr>
                 </tfoot>
@@ -532,9 +412,9 @@
 <script src="plugins/bootstrap-switch/docs/js/bootstrap-switch.js"></script>
  <!-- dialog -->
  <script src="plugins/dialog/dialog-min.js"></script>
-<script>
+<script type="text/javascript"> 
   $(function () {
-    $("#tongzhi").DataTable();
+    $("#tongzhipic").DataTable();
   });
   $(document).ajaxStart(function() { Pace.restart(); });
             $('.ajax').click(function(){
@@ -543,9 +423,51 @@
             }});
       });
    
-</script>
-<script type="text/javascript"> 
-  
+//add
+
+$(document).ready(function(){
+    $('button[data-event=add]').on('click', function () {
+      var d = dialog({
+        title: '增加轮播图',
+        width: 500,
+        content: '<form action=" " id="form" method="post">'
+                       +'<div>'
+                          +'<img src="" style="width: 200px; height: 120px; border: 1px inset #333;" id="iimg" name="pic">'
+                         +'<div id="container">'
+                          +'<button class="btn btn-primary" style="margin-top:10px;" id="pickfiles" href="#">上传</button>'
+                          +'<input type="hidden" id="pic" name="pic">'
+                          +'</div>'
+                        +'</div>'
+                        +'<input type="submit" class="btn btn-success" id="submit" style="margin-right:60px; float:right" value="提交">'
+                        +'<a type="cancel"  href="index.html" class="btn btn-default" style="right:10px;position:fixed;" value="取消">取消</a>' 
+                      +'</form>',
+
+        //  button: [
+        //     {
+        //         value: '提交',
+        //         callback: function () {
+        //         console.log("hahaha");
+        //         $('#form').submit();
+        //         },
+        //         autofocus: true
+        //     },
+        //     {
+        //         value: '取消',
+        //         callback: function () {
+        //             alert('确定要取消吗')
+        //         }
+        //     }
+        // ]
+        // cancelValue: '取消',
+        // cancel: function () {
+        //   alert('确定要取消吗')
+        // }
+      });
+      d.showModal();
+    });
+});
+
+//delete
  $(".delOneRow").click(function() { 
         if ($("tr").length < 2) { 
         alert("至少保留一个通知!"); 
@@ -555,89 +477,85 @@
         } 
         } 
   });
-
+//edit
 function edit(rowIndex) {
-  var rowHtml = document.getElementById("tongzhi").rows[rowIndex];
-  rowHtml.cells[0].innerHTML = "<input  style='width:200px' type='text' value='"+rowHtml.cells[0].innerText+"'name='c0' >";
-  rowHtml.cells[1].innerHTML = "<input  type='text' value='"+rowHtml.cells[1].innerText+"'name='c0' >";
-  rowHtml.cells[2].innerHTML = "<input type='date' value='"+rowHtml.cells[2].innerText+"'name='c0'>";
-  rowHtml.cells[3].innerHTML = "<a href='#' onclick='save(this.parentNode.parentNode.rowIndex)' class='btn btn-success'> <i class='fa fa-floppy-o' ></i></a>"+"<a href='#' class='btn btn-danger delOneRow'><i class='fa fa-trash'></i></a>";
+  var rowHtml = document.getElementById("tongzhipic").rows[rowIndex];
+ rowHtml.cells[0].innerHTML = "<img id='iimg' style='display: block; width: 200px; height: 100px;' src='"+rowHtml.cells[0].getElementsByTagName("img")[0].src+"'>"+"<span id='container'><input style='width:100px' type='file' id='pickfiles' value='"+rowHtml.cells[0].innerText+"'name='c0'></span>"
+  rowHtml.cells[1].innerHTML = "<a href='#' onclick='save(this.parentNode.parentNode.rowIndex)' class='btn btn-success'> <i class='fa fa-floppy-o' ></i></a>"+"<a href='#' class='btn btn-danger delOneRow'><i class='fa fa-trash'></i></a>";
+ //qiniu
+  var uploader = Qiniu.uploader({
+    runtimes: 'html5,flash,html4',      
+    browse_button: 'pickfiles',         
+    uptoken_url: '../static/hd/php-sdk-7.0.7/examples/upload_token.php',        
+    get_new_uptoken: false,             
+    unique_names: true,              
+    domain: 'oaarndf77.bkt.clouddn.com',     
+    container: 'container',             
+    max_file_size: '10mb',             
+    flash_swf_url: 'plupload-2.1.8/Moxie.swf',  
+    max_retries: 3,                    
+    dragdrop: true,                    
+    drop_element: 'container',          
+    chunk_size: '4mb',                  
+    auto_start: true,                  
+    init: {
+        'FilesAdded': function(up, files) {
+            plupload.each(files, function(file) {
+                
+            });
+        },
+        'BeforeUpload': function(up, file) {
+                     },
+        'UploadProgress': function(up, file) {
+               
+        },
+        'FileUploaded': function(up, file, info) {
+
+               var domain = up.getOption('domain');
+               var res = JSON.parse(info);
+               var sourceLink = "http://" + domain +"/"+res.key;  
+               var x = document.getElementById("iimg");
+               x.setAttribute("src", sourceLink);
+               alert(sourceLink);
+               document.getElementById("pic").value=sourceLink;
+        },
+        'Error': function(up, err, errTip) {
+               alert ('上传失败');
+        },
+        'UploadComplete': function() {
+               
+        },
+        'Key': function(up, file) {
+            
+            var key = "";
+            // do something with key here
+            return key
+        }
+    }
+});
+
+
 }
 
-
+//save
 function save(rowIndex){
-  var rowHtml = document.getElementById("tongzhi").rows[rowIndex];
-  for(var i = 0;i<3;i++){
+  var rowHtml = document.getElementById("tongzhipic").rows[rowIndex];
+  for(var i = 0;i<1;i++){
   rowHtml.cells[i].innerHTML = rowHtml.cells[i].children[0].value;
   }
   console.log(rowHtml);
-  console.log(rowHtml.cells[0].innerHTML);
-  console.log(rowHtml.cells[1].innerHTML);
-  console.log(rowHtml.cells[2].innerHTML);
+  console.log(rowHtml.cells[0].children[1].value);
   
-  rowHtml.cells[3].innerHTML = "<a href='#' onclick='edit(this.parentNode.parentNode.rowIndex)' class='edit btn btn-info'> <i class='fa fa-edit'></i></a> "+ "<a href='#' class='btn btn-danger delOneRow'><i class='fa fa-trash'></i></a>";
+  rowHtml.cells[1].innerHTML = "<a href='#' onclick='edit(this.parentNode.parentNode.rowIndex)' class='edit btn btn-info'> <i class='fa fa-edit'></i></a> "+ "<a href='#' class='btn btn-danger delOneRow'><i class='fa fa-trash'></i></a>";
   // ajax
    $.post("update.php",{
-                title: rowHtml.cells[0].innerHTML,
-                link: rowHtml.cells[1].innerHTML,             
-                time: rowHtml.cells[2].innerHTML,
+            pic: rowHtml.cells[0].getElementsByTagName('img')[0].src,
             },function(data){
             alert(data);
             console.log("success");
-          });
-  
-            
+          });           
 }
-
-//add
-
-$(document).ready(function(){
-    $('button[data-event=add]').on('click', function () {
-    var d = dialog({
-      title: '增加通知',
-      width: 500,
-      content: '<form action=" " id="form" method="post">'
-                    + '<div class="form-group">'
-                        +'<label for="name" class="control-label">通知标题</label>'
-                        +'<input type="text" class="form-control" name="name" id="name" placeholder="请填写输入通知标题" data-validation="required" data-validation-error-msg="请填写通知标题">'
-                    +'</div>'
-                    +'<div class="form-group">'
-                        +'<label for="link" class="control-label">微信推文链接</label>'
-                        +'<input type="text" class="form-control" name="time" id="time" placeholder="请输入微信推文链接" data-validation="required" data-validation-error-msg="请填写链接">'
-                    +'</div>'
-                    +'<div class="form-group">'
-                        +'<label for="time" class="control-label">通知时间</label>'
-                        +'<input type="text" class="form-control" name="time" id="time" placeholder="请填写通知时间" data-validation="required" data-validation-error-msg="请填写通知时间">'
-                    +'</div>'
-                    +'</form>',
-       button: [
-          {
-              value: '提交',
-              callback: function () {
-              console.log("hahaha");
-              $('#form').submit();
-              },
-              autofocus: true
-          },
-          {
-              value: '取消',
-              callback: function () {
-                  alert('确定要取消吗')
-              }
-          }
-      ]
-      // cancelValue: '取消',
-      // cancel: function () {
-      //   alert('确定要取消吗')
-      // }
-    });
-    d.showModal();
-  });
-
-});
 </script> 
-
-
 </body>
 </html>
    

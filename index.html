@@ -545,7 +545,7 @@ function edit(rowIndex) {
   rowHtml.cells[3].innerHTML = "<input style='width:110px'type='text' value='"+rowHtml.cells[3].innerText+"'name='c0'>";
   rowHtml.cells[4].innerHTML = "<input type='date' value='"+rowHtml.cells[4].innerText+"'name='c0'>";
   rowHtml.cells[5].innerHTML = "<input type='date' value='"+rowHtml.cells[5].innerText+"'name='c0'>";
-  rowHtml.cells[7].innerHTML = "<a href='#' onclick='save(this.parentNode.parentNode.rowIndex)' class='btn btn-success'> <i class='fa fa-floppy-o' ></i></a>"+"<a href='#' class='btn btn-danger delOneRow'><i class='fa fa-trash'></i></a>";
+  rowHtml.cells[7].innerHTML = "<a href='#' onclick='save(this.parentNode.parentNode.rowIndex)' class='btn btn-success' style='margin-right:5px;'> <i class='fa fa-floppy-o' ></i></a>"+"<a href='#' class='btn btn-danger delOneRow'><i class='fa fa-trash'></i></a>";
   
 }
 

@@ -35,6 +35,7 @@
       text-overflow:ellipsis;
       overflow: hidden;
    }
+ 
  </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -239,14 +240,14 @@
                                 <thead>
                                     <div class="row">
                                         <tr>
-                                            <th id="pic" class="col-md-1">活动海报</th>
-                                            <th id="name" class="col-md-2" >活动名称</th>
-                                            <th id="link" class="col-md-1" style="width:200px;">活动链接</th>
-                                            <th id="place" class="col-md-2">地点</th>
-                                            <th id="begintime" class="col-md-1">开始时间</th>
-                                            <th id="endtime" class="col-md-1">结束时间</th>
-                                            <th id="status" class="col-md-1">是否展示</th>
-                                            <th id="operate" class="col-md-2">操作</th>
+                                            <th id="pic" class="col-md-1">海报</th>
+                                            <th id="name" class="col-md-2" style="width:100px;" >活动名称</th>
+                                            <th id="link" class="col-md-2" style="width:100px;">活动链接</th>
+                                            <th id="place" class="col-md-1" style="width:80px;" >地点</th>
+                                            <th id="begintime" class="col-md-2">开始时间</th>
+                                            <th id="endtime" class="col-md-2">结束时间</th>
+                                            <th id="status" class="col-md-1">展示</th>
+                                            <th id="operate" class="col-md-1">操作</th>
                                         </tr>
                                         <div>
                                 </thead>
@@ -257,7 +258,7 @@
                                         </td>
                                         <td>Internet Explorer 4.0fsvdf</td>
                                         <td >http://dajksdnsakjfnaskjndfghjhgfdsdfghgfdsfgfdsdfgfdsfgfdsghgffghgfdf</td>
-                                        <td>Jhonfdsfjsklf</td>
+                                        <td>学生活动中心</td>
                                         <td>2016-01-04</td>
                                         <td>2016-09-04</td>
                                         <td>
@@ -539,9 +540,9 @@
 function edit(rowIndex) {
   var rowHtml = document.getElementById("huodong").rows[rowIndex];
   rowHtml.cells[0].innerHTML = "<div id='localImag' width='50px'  height='50px'><img id='preview' style='display: block; width: 50px; height: 50px;'></div>"+"<input style='width:100px'type='file' id='doc' onchange='javascript:setImagePreview();' value='"+rowHtml.cells[0].innerText+"'name='c0' >";
-  rowHtml.cells[1].innerHTML = "<input style='width:100px'type='text' value='"+rowHtml.cells[1].innerText+"'name='c0' >";
-  rowHtml.cells[2].innerHTML = "<input style='width:100px'type='text' value='"+rowHtml.cells[2].innerText+"'name='c0'>";
-  rowHtml.cells[3].innerHTML = "<input style='width:100px'type='text' value='"+rowHtml.cells[3].innerText+"'name='c0'>";
+  rowHtml.cells[1].innerHTML = "<input style='width:130px'type='text' value='"+rowHtml.cells[1].innerText+"'name='c0' >";
+  rowHtml.cells[2].innerHTML = "<input style='width:130px'type='text' value='"+rowHtml.cells[2].innerText+"'name='c0'>";
+  rowHtml.cells[3].innerHTML = "<input style='width:110px'type='text' value='"+rowHtml.cells[3].innerText+"'name='c0'>";
   rowHtml.cells[4].innerHTML = "<input type='date' value='"+rowHtml.cells[4].innerText+"'name='c0'>";
   rowHtml.cells[5].innerHTML = "<input type='date' value='"+rowHtml.cells[5].innerText+"'name='c0'>";
   rowHtml.cells[7].innerHTML = "<a href='#' onclick='save(this.parentNode.parentNode.rowIndex)' class='btn btn-success'> <i class='fa fa-floppy-o' ></i></a>"+"<a href='#' class='btn btn-danger delOneRow'><i class='fa fa-trash'></i></a>";

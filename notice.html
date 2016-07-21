@@ -33,6 +33,8 @@
    .table>tbody>tr>td{
       vertical-align: middle;
       padding: 5px;
+      text-overflow:ellipsis;
+      overflow: hidden;
    }
   </style>
 </head>
@@ -249,10 +251,10 @@
               <table id="tongzhi" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th id="title">通知名称</th>
-                  <th id="link">通知链接</th>
-                  <th id="time">创建时间</th>
-                  <th id="operate">操作</th>                
+                  <th id="title" class="col-md-4" >通知名称</th>
+                  <th id="link" class="col-md-4" style="width:300px;">通知链接</th>
+                  <th id="time" class="col-md-2">创建时间</th>
+                  <th id="operate" class="col-md-2">操作</th>                
                 </tr>
                 </thead>
                 <tbody>
@@ -533,16 +535,23 @@
  <!-- dialog -->
  <script src="plugins/dialog/dialog-min.js"></script>
 <script>
-  $(function () {
-    $("#tongzhi").DataTable();
-  });
+  // $(function () {
+  //   $("#tongzhi").DataTable({
+  //     "paging": true, //分页
+  //     "lengthChange": true, 
+  //     "searching": true, //搜索
+  //     "ordering": true, //排序
+  //     "info": true, 
+  //     "autoWidth": false
+  //   });
+  // });
+  // pace刷新
   $(document).ajaxStart(function() { Pace.restart(); });
             $('.ajax').click(function(){
                 $.ajax({url: '#', success: function(result){
                     console.log("refresh success");
             }});
       });
-   
 </script>
 <script type="text/javascript"> 
   
@@ -559,9 +568,9 @@
 function edit(rowIndex) {
   var rowHtml = document.getElementById("tongzhi").rows[rowIndex];
   rowHtml.cells[0].innerHTML = "<input  style='width:200px' type='text' value='"+rowHtml.cells[0].innerText+"'name='c0' >";
-  rowHtml.cells[1].innerHTML = "<input  type='text' value='"+rowHtml.cells[1].innerText+"'name='c0' >";
+  rowHtml.cells[1].innerHTML = "<input  style='width:200px' type='text' value='"+rowHtml.cells[1].innerText+"'name='c0' >";
   rowHtml.cells[2].innerHTML = "<input type='date' value='"+rowHtml.cells[2].innerText+"'name='c0'>";
-  rowHtml.cells[3].innerHTML = "<a href='#' onclick='save(this.parentNode.parentNode.rowIndex)' class='btn btn-success'> <i class='fa fa-floppy-o' ></i></a>"+"<a href='#' class='btn btn-danger delOneRow'><i class='fa fa-trash'></i></a>";
+  rowHtml.cells[3].innerHTML = "<a href='#' onclick='save(this.parentNode.parentNode.rowIndex)' class='btn btn-success' style='margin-right:5px;'> <i class='fa fa-floppy-o' ></i></a>"+"<a href='#' class='btn btn-danger delOneRow'><i class='fa fa-trash'></i></a>";
 }
 
 
@@ -575,7 +584,7 @@ function save(rowIndex){
   console.log(rowHtml.cells[1].innerHTML);
   console.log(rowHtml.cells[2].innerHTML);
   
-  rowHtml.cells[3].innerHTML = "<a href='#' onclick='edit(this.parentNode.parentNode.rowIndex)' class='edit btn btn-info'> <i class='fa fa-edit'></i></a> "+ "<a href='#' class='btn btn-danger delOneRow'><i class='fa fa-trash'></i></a>";
+  rowHtml.cells[3].innerHTML = "<a href='#' onclick='edit(this.parentNode.parentNode.rowIndex)' class='edit btn btn-info' > <i class='fa fa-edit'></i></a> "+ "<a href='#' class='btn btn-danger delOneRow'><i class='fa fa-trash'></i></a>";
   // ajax
    $.post("update.php",{
                 title: rowHtml.cells[0].innerHTML,

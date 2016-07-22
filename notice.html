@@ -248,11 +248,11 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="tongzhi" class="table table-bordered table-striped">
+              <table id="tongzhi" style="table-layout:fixed" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th id="title" class="col-md-4" >通知名称</th>
-                  <th id="link" class="col-md-4" style="width:300px;">通知链接</th>
+                  <th id="link" class="col-md-4" style="width:200px;">通知链接</th>
                   <th id="time" class="col-md-2">创建时间</th>
                   <th id="operate" class="col-md-2">操作</th>                
                 </tr>
@@ -535,16 +535,16 @@
  <!-- dialog -->
  <script src="plugins/dialog/dialog-min.js"></script>
 <script>
-  // $(function () {
-  //   $("#tongzhi").DataTable({
-  //     "paging": true, //分页
-  //     "lengthChange": true, 
-  //     "searching": true, //搜索
-  //     "ordering": true, //排序
-  //     "info": true, 
-  //     "autoWidth": false
-  //   });
-  // });
+  $(function () {
+    $("#tongzhi").DataTable({
+      "paging": true, //分页
+      "lengthChange": true, 
+      "searching": true, //搜索
+      "ordering": true, //排序
+      "info": true, 
+      "autoWidth": false
+    });
+  });
   // pace刷新
   $(document).ajaxStart(function() { Pace.restart(); });
             $('.ajax').click(function(){

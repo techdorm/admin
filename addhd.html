@@ -227,9 +227,17 @@
                         <label for="name" class="control-label">活动名称</label>
                         <input type="text" class="form-control" name="name" id="name" placeholder="请输入活动名称" data-validation="required" data-validation-error-msg="请填写活动名称">
                     </div>
+                    <div class="from-group">
+                        <label for="link" class="control-label">活动链接</label>
+                        <input type="text" class="form-control" name="link" id="link" placeholder="请输入活动链接" data-validation="required" data-validation-error-msg="请填写活动链接">
+                    </div>
                     <div class="form-group">
-                        <label for="time" class="control-label">起止时间</label>
-                        <input type="text" class="form-control" name="time" id="time" placeholder="请输入起止时间" data-validation="required" data-validation-error-msg="请填写起止时间">
+                        <label for="time" class="control-label">开始时间</label>
+                        <input type="date"  class="form-control" name="time" id="time" placeholder="请输入开始时间" data-validation="required" data-validation-error-msg="请填写开始时间">
+                    </div>
+                    <div>
+                        <label for="time" class="control-label">结束时间</label>
+                        <input type="date" class="form-control" name="time" id="time" placeholder="请输入结束时间" data-validation="required" data-validation-error-msg="请填写结束时间">
                     </div>
                     <div class="form-group">
                         <label for="place" class="control-label">活动地点</label>
@@ -342,6 +350,7 @@
             $('select').prop('disabled',true);
             $("form").attr('id', 'already_form');
             $('#name').val('{$res["name"]}');
+            $('#link').val('{$res["link"]}');
             $('#time').val('{$res["time"]}');
             $('#place').val('{$res["place"]}');
             $('#resp').val('{$res["resp"]}');

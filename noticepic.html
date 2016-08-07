@@ -448,13 +448,13 @@ $(document).ready(function(){
                           +'<input type="hidden" id="pic" name="pic">'
                           +'</div>'
                         +'</div>'
-                        +'<div>'
-                        +'<input type="text">'
+                        +'<div class="from-group" style="margin-bottom:20px;">'
+                        +'<label for="link" class="control-label">活动链接</label>'
+                        +'<input type="text" class="form-control" name="link" id="link" placeholder="请输入活动链接" data-validation="required" data-validation-error-msg="请填写活动链接">'
                         +'</div>'
                         +'<input type="submit" class="btn btn-success" id="submit" style="margin-right:60px; float:right" value="提交">'
                         +'<a type="cancel"  href="noticepic.html" class="btn btn-default" style="right:10px;position:fixed;" value="取消">取消</a>' 
                       +'</form>',
-
         //  button: [
         //     {
         //         value: '提交',
@@ -497,56 +497,56 @@ function edit(rowIndex) {
   rowHtml.cells[1].innerHTML =rowHtml.cells[1].innerHTML = "<input  style='width:400px' type='text' value='"+rowHtml.cells[1].innerText+"'name='c0' >";
   rowHtml.cells[2].innerHTML = "<a href='#' onclick='save(this.parentNode.parentNode.rowIndex)' class='btn btn-success' style='margin-right:5px;'> <i class='fa fa-floppy-o' ></i></a>"+"<a href='#' class='btn btn-danger delOneRow'><i class='fa fa-trash'></i></a>";
  //qiniu
-  // var uploader = Qiniu.uploader({
-  //   runtimes: 'html5,flash,html4',      
-  //   browse_button: 'pickfiles',         
-  //   uptoken_url: '../static/hd/php-sdk-7.0.7/examples/upload_token.php',        
-  //   get_new_uptoken: false,             
-  //   unique_names: true,              
-  //   domain: 'oaarndf77.bkt.clouddn.com',     
-  //   container: 'container',             
-  //   max_file_size: '10mb',             
-  //   flash_swf_url: 'plupload-2.1.8/Moxie.swf',  
-  //   max_retries: 3,                    
-  //   dragdrop: true,                    
-  //   drop_element: 'container',          
-  //   chunk_size: '4mb',                  
-  //   auto_start: true,                  
-  //   init: {
-  //       'FilesAdded': function(up, files) {
-  //           plupload.each(files, function(file) {
+  var uploader = Qiniu.uploader({
+    runtimes: 'html5,flash,html4',      
+    browse_button: 'pickfiles',         
+    uptoken_url: '../static/hd/php-sdk-7.0.7/examples/upload_token.php',        
+    get_new_uptoken: false,             
+    unique_names: true,              
+    domain: 'oaarndf77.bkt.clouddn.com',     
+    container: 'container',             
+    max_file_size: '10mb',             
+    flash_swf_url: 'plupload-2.1.8/Moxie.swf',  
+    max_retries: 3,                    
+    dragdrop: true,                    
+    drop_element: 'container',          
+    chunk_size: '4mb',                  
+    auto_start: true,                  
+    init: {
+        'FilesAdded': function(up, files) {
+            plupload.each(files, function(file) {
                 
-  //           });
-  //       },
-  //       'BeforeUpload': function(up, file) {
-  //                    },
-  //       'UploadProgress': function(up, file) {
+            });
+        },
+        'BeforeUpload': function(up, file) {
+                     },
+        'UploadProgress': function(up, file) {
                
-  //       },
-  //       'FileUploaded': function(up, file, info) {
+        },
+        'FileUploaded': function(up, file, info) {
 
-  //              var domain = up.getOption('domain');
-  //              var res = JSON.parse(info);
-  //              var sourceLink = "http://" + domain +"/"+res.key;  
-  //              var x = document.getElementById("iimg");
-  //              x.setAttribute("src", sourceLink);
-  //              alert(sourceLink);
-  //              document.getElementById("pic").value=sourceLink;
-  //       },
-  //       'Error': function(up, err, errTip) {
-  //              alert ('上传失败');
-  //       },
-  //       'UploadComplete': function() {
+               var domain = up.getOption('domain');
+               var res = JSON.parse(info);
+               var sourceLink = "http://" + domain +"/"+res.key;  
+               var x = document.getElementById("iimg");
+               x.setAttribute("src", sourceLink);
+               alert(sourceLink);
+               document.getElementById("pic").value=sourceLink;
+        },
+        'Error': function(up, err, errTip) {
+               alert ('上传失败');
+        },
+        'UploadComplete': function() {
                
-  //       },
-  //       'Key': function(up, file) {
+        },
+        'Key': function(up, file) {
             
-  //           var key = "";
-  //           // do something with key here
-  //           return key
-  //       }
-  //   }
-  // });
+            var key = "";
+            // do something with key here
+            return key
+        }
+    }
+  });
 }
 
 //save
@@ -556,7 +556,7 @@ function save(rowIndex){
   rowHtml.cells[i].innerHTML = rowHtml.cells[i].children[0].value;
   }
   console.log(rowHtml);
-  console.log(rowHtml.cells[0].children[1].value);
+  // console.log(rowHtml.cells[0].children[1].value);
   
   rowHtml.cells[2].innerHTML = "<a href='#' onclick='edit(this.parentNode.parentNode.rowIndex)' class='edit btn btn-info'> <i class='fa fa-edit'></i></a> "+ "<a href='#' class='btn btn-danger delOneRow'><i class='fa fa-trash'></i></a>";
   // ajax

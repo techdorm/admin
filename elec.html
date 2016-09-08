@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HDU公寓管理后台</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <!-- skin -->
+    <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+    <!-- pace -->
+    <link rel="stylesheet" href="plugins/pace/pace.min.css">
+    <!-- highlight -->
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap-switch/docs/css/highlight.css">
+    <link rel="stylesheet" type="text/css" href="plugins/handsontable/handsontable.css">
+    <link rel="stylesheet" type="text/css" href="plugins/handsontable/pikaday/pikaday.css">
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <!-- Main Header -->
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>HDU</b></span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>HDU</b>公寓管理后台</span>
+            </a>
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+                        <li class="dropdown messages-menu">
+                            <!-- Menu toggle button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="label label-success">4</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">4封未读邮件</li>
+                                <li>
+                                    <!-- inner menu: contains the messages -->
+                                    <ul class="menu">
+                                        <li>
+                                            <!-- start message -->
+                                            <a href="#">
+                                                <div class="pull-left">
+                                                    <!-- User Image -->
+                                                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                                </div>
+                                                <!-- Message title and timestamp -->
+                                                <h4>
+                        Support Team
+                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                      </h4>
+                                                <!-- The message -->
+                                                <p>Why not buy a new awesome theme?</p>
+                                            </a>
+                                        </li>
+                                        <!-- end message -->
+                                    </ul>
+                                    <!-- /.menu -->
+                                </li>
+                                <li class="footer"><a href="#">See All Messages</a></li>
+                            </ul>
+                        </li>
+                        <!-- /.messages-menu -->
+                        <!-- Notifications Menu -->
+                        <li class="dropdown notifications-menu">
+                            <!-- Menu toggle button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bell-o"></i>
+                                <span class="label label-warning">10</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">10条未读消息</li>
+                                <li>
+                                    <!-- Inner Menu: contains the notifications -->
+                                    <ul class="menu">
+                                        <li>
+                                            <!-- start notification -->
+                                            <a href="#">
+                                                <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                                            </a>
+                                        </li>
+                                        <!-- end notification -->
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="#">View all</a></li>
+                            </ul>
+                        </li>
+                        <!-- User Account Menu -->
+                        <li class="dropdown user user-menu">
+                            <!-- Menu Toggle Button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <!-- The user image in the navbar-->
+                                <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                <span class="hidden-xs">超级管理员</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- The user image in the menu -->
+                                <li class="user-header">
+                                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                    <p>
+                                        超级管理员
+                                    </p>
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">个人资料</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-default btn-flat">退出</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Control Sidebar Toggle Button -->
+                        <li>
+                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                        <p>超级管理员</p>
+                        <!-- Status -->
+                        <a href="#"><i class="fa fa-circle text-success"></i>在线</a>
+                    </div>
+                </div>
+                <!-- search form (Optional) -->
+                <form action="#" method="get" class="sidebar-form">
+                    <div class="input-group">
+                        <input type="text" name="q" class="form-control" placeholder="Search...">
+                        <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+                    </div>
+                </form>
+                <!-- /.search form -->
+                <!-- Sidebar Menu -->
+                <ul class="sidebar-menu">
+                    <li class="header">MAIN NAVIGATION</li>
+                    <!-- Optionally, you can add icons to the links -->
+                    <li><a href="index.html"><i class="fa fa-dashboard"></i> <span>活动广场</span> </a></li>
+                    <li class="treeview ">
+                        <a href="#">
+                            <i class="fa fa-laptop"></i> <span>通知公告</span> <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="notice.html"><i class="fa fa-circle-o"></i>公告列表</a></li>
+                            <li><a href="noticepic.html"><i class="fa fa-circle-o"></i> 通知轮播图</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview active">
+                        <a href="#"><i class="fa fa-table"></i> <span>水电费</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="water.html"><i class="fa fa-circle-o"></i> 水费</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 电费</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- /.sidebar-menu -->
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+       
+        
+        <div class="panel-tools">
+                
+                <i class="fa fa-thumb-tack"> 各寝室楼电费</i>
+                <div class="btn-group" style="float:right">
+                 <!--  <button class="btn btn-primary" data-event="add">
+                    <i class="fa fa-plus" id="addOneRow" ></i> 增加
+                  </button> -->
+                  <a class="btn ajax" title="Ajax Request" onclick="window.location.href=window.location.href">
+                    <i class="fa fa-refresh"></i>
+                  </a>
+              </div>
+         </div>
+      </h1>
+            </section>
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box">
+                            <div class="box-header">
+                                 <div class="form-group">
+                                    <label style="float:left;margin: 8px">楼号</label>
+                                    <select class="form-control select2" name="building" id="building" style="width:150px;float:left;margin-right:20px">
+                                        <option value="1">2号楼</option>
+                                        <option value="2">3号楼</option>
+                                        <option value="3">4号北楼</option>
+                                        <option value="4">4号南楼</option>
+                                        <option value="5">5号北楼</option>
+                                        <option value="6">5号南楼</option>
+                                        <option value="7">6号北楼</option>
+                                        <option value="8">6号南楼</option>
+                                        <option value="9">8号楼</option>
+                                        <option value="10">10号北楼</option>
+                                        <option value="11">10号南楼</option>
+                                        <option value="12">11号北楼</option>
+                                        <option value="13">11号南楼</option>
+                                        <option value="14">12号北楼</option>
+                                        <option value="15">12号南楼</option>
+                                        <option value="16">13号楼</option>
+                                        <option value="17">14号楼</option>
+                                        <option value="18">15号楼</option>
+                                        <option value="19">16号楼</option>
+                                        <option value="20">18号楼</option>
+                                        <option value="21">21号楼</option>
+                                        <option value="22">22号楼</option>
+                                        <option value="23">27号楼</option>
+                                        <option value="24">28号楼</option>
+                                        <option value="25">29号楼</option>
+                                        <option value="26">30号楼</option>
+                                        <option value="27">31号楼</option>
+                                        <option value="28">32号东楼</option>
+                                        <option value="29">32号西楼</option>
+                                        <option value="30">33号东一</option>
+                                        <option value="31">33号西二</option>
+                                        <option value="32">34号东一</option>
+                                        <option value="33">34号西二</option>
+                                        <option value="34">35号楼</option>
+                                        <option value="35">36号东一</option>
+                                        <option value="36">36号西二</option>
+                                        <option value="37">37号东一</option>
+                                        <option value="38">37号西二</option>
+                                        <option value="39">38号东一</option>
+                                        <option value="40">38号西二</option>
+                                        <option value="41">东校区13</option>
+                                        <option value="42">东校区14</option>
+                                    </select>
+                                    <label style="float:left;margin: 8px">层号</label>
+                                    <select class="form-control select2" name="floor" id="floor" style="width:150px;float:left;margin-right:20px">
+                                        <option value="1">1层</option>
+                                        <option value="2">2层</option>
+                                        <option value="3">3层</option>
+                                        <option value="4">4层</option>
+                                        <option value="5">5层</option>
+                                        
+                                    </select>
+                                    <input id="search" class="form-control" style="width:250px;float:left;margin-right: 20px" placeholder="Search" />
+                                    <button id="tijiao" name="save" class="btn btn-primary">保存</button>
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <div id="example"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <!-- To the right -->
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 1.0.0
+            </div>
+            <!-- Default to the left -->
+            <strong>Copyright &copy; 2016 <a href="#">HDU公寓中心宿舍管理委员会</a></strong>
+        </footer>
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <div class="tab-content">
+                <div id="control-sidebar-settings-tab">
+                    <form method="post">
+                        <h3 class="control-sidebar-heading">General Settings</h3>
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Report panel usage
+                                <input type="checkbox" class="pull-right" checked>
+                            </label>
+                            <p>
+                                Some information about this general settings option
+                            </p>
+                        </div>
+                        <h3 class="control-sidebar-heading">Chat Settings</h3>
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Delete chat history
+                                <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+                            </label>
+                        </div>
+                        <!-- /.form-group -->
+                    </form>
+                </div>
+                <!-- /.tab-pane -->
+            </div>
+        </aside>
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <!-- ./wrapper -->
+    <!-- REQUIRED JS SCRIPTS -->
+    <!-- jQuery 2.2.0 -->
+    <script src="plugins/jQuery/jQuery-2.2.0.min.js"></script>
+    <script src="plugins/handsontable/handsontable.full.js"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- PACE -->
+    <script src="plugins/pace/pace.min.js"></script>
+    <!-- SlimScroll -->
+    <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="plugins/fastclick/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/app.min.js"></script>
+    <script src="dist/js/demo.js"></script>
+    <script src="plugins/handsontable/moment/moment.js"></script>
+    <script type="plugins/handsontable/pikaday/pikaday.js"></script>
+    <script type="text/javascript">
+    $(document).ajaxStart(function() {
+        Pace.restart();
+    });
+    $('.ajax').click(function() {
+        $.ajax({
+            url: '#',
+            success: function(result) {
+                console.log("refresh success");
+            }
+        });
+    });
+
+
+    var data = function() {
+        return Handsontable.helper.createSpreadsheetData(150, 3);
+    };
+
+    var container = document.getElementById('example');
+
+    var hot = new Handsontable(container, {
+        data: data(),
+        rowHeaders: true,
+        colHeaders: true,
+        colWidths: 300,
+        rowHeights: 30,
+        minSpareRows: 1,
+        // stretchH: 'all',
+        autoRowSize: false,
+        autoColSize: true,
+        currentRowClassName: 'currentRow',
+        currentColClassName: 'currentCol',
+        autoWrapRow: true,
+        // contextMenu: true,
+        colHeaders: ['寝室号', '本月电费', '日期'],
+        search: true,
+        columns: [{
+            // type: 'autocomplete',
+            // source: ['Audi', 'BMW', 'Chrysler', 'Citroen', 'Mercedes', 'Nissan', 'Opel', 'Suzuki', 'Toyota', 'Volvo'],
+            // strict: false
+        }, {
+            // 2nd cell is simple text, no special options here
+        }, {
+            type: 'date',
+            dateFormat: 'YYYY/MM/DD',
+            correctFormat: true,
+            defaultDate: '2016/09/01'
+        }]
+    });
+    hot.clear();
+
+
+
+    var search = document.getElementById('search');
+
+    function onlyExactMatch(queryStr, value) {
+        return queryStr.toString() === value.toString();
+    }
+
+    Handsontable.Dom.addEvent(search, 'keyup', function(event) {
+        var queryResult = hot.search.query(this.value);
+        console.log(queryResult);
+        hot.render();
+    });
+
+    
+
+    var building=$('#building').val();
+    var floor=$('#floor').val();
+    
+    $('#tijiao').click(function() {
+        console.log(hot.getData());
+    });
+
+    $('button[name=save]').click(function () {
+        $.ajax({
+          url: "elec.php",
+          data: { 
+               "building":building,
+               "floor":floor,
+               "data": hot.getData()
+          }, 
+          dataType: 'json',
+          type: 'POST',
+          success: function (res) {
+            if (res.result === 'ok') {
+              console.log('Data saved!');
+            }
+            else {
+              console.log('Save error');
+            }
+          },
+          error: function () {
+            console.log('Save error.');
+          }
+        });
+      });
+    </script>
+</body>
+
+</html>

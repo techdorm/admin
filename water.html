@@ -182,10 +182,17 @@
                         </ul>
                     </li>
                     <li class="treeview active">
-                        <a href="#"><i class="fa fa-table"></i> <span>水电费</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <a href="#"><i class="fa fa-tint"></i> <span>水费</span> <i class="fa fa-angle-left pull-right"></i></a>
                         <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-circle-o"></i> 水费</a></li>
-                            <li><a href="elec.html"><i class="fa fa-circle-o"></i> 电费</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 新增水费批次</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 历史水费清单</a></li>
+                        </ul>
+                    </li>
+                     <li class="treeview">
+                        <a href="#"><i class="fa fa-bolt"></i> <span>电费</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="elec.html"><i class="fa fa-circle-o"></i> 新增电费批次</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 历史电费清单</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -202,11 +209,8 @@
         
         <div class="panel-tools">
                 
-                <i class="fa fa-thumb-tack"> 各寝室楼水费</i>
+                <i class="fa fa-thumb-tack">录入水费新批次</i>
                 <div class="btn-group" style="float:right">
-                 <!--  <button class="btn btn-primary" data-event="add">
-                    <i class="fa fa-plus" id="addOneRow" ></i> 增加
-                  </button> -->
                   <a class="btn ajax" title="Ajax Request" onclick="window.location.href=window.location.href">
                     <i class="fa fa-refresh"></i>
                   </a>
@@ -221,8 +225,12 @@
                         <div class="box">
                             <div class="box-header">
                                 <div class="form-group">
-                                    <label style="float:left;margin: 8px">楼号</label>
-                                    <select class="form-control select2" style="width:150px;float:left;margin-right:20px">
+                                    <label style="float:left;margin: 8px">批次</label>
+                                    <input type="date"  class="form-control" name="" style="float:left;width:150px;"> ---   
+                                    <input type="date"  class="form-control" name="" style="width:150px;display:inline-block;">
+                                    <button class="btn btn-primary" style="margin-top: -3px;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                    <label style="margin: 8px">楼号</label>
+                                    <select class="form-control select2" id="building" style="width:150px;margin-right:20px;display:inline-block;">
                                         <option value="1" selected>2号楼</option>
                                         <option value="2">3号楼</option>
                                         <option value="3">4号北楼</option>
@@ -266,16 +274,21 @@
                                         <option value="41">东校区13</option>
                                         <option value="42">东校区14</option>
                                     </select>
-                                    <label style="float:left;margin: 8px">层号</label>
-                                    <select class="form-control select2" style="width:150px;float:left;margin-right:20px">
+
+                                     <button class="btn btn-default"  id ="upper" style="display:inline-block;"><i class="fa fa-angle-left "></i> 上一层</button>
+                                    <label style="margin: 8px;">层号</label>
+                                    <select class="form-control select2" id ="floor" style="width:150px;margin-right:20px;display:inline-block;">
                                         <option value="1">1层</option>
                                         <option value="2">2层</option>
                                         <option value="3">3层</option>
                                         <option value="4">4层</option>
                                         <option value="5">5层</option>
-                                        
+                                        <option value="6">6层</option>
                                     </select>
-                                    <input id="search" class="form-control" style="width:250px;float:left;margin-right: 20px" placeholder="Search" />
+                                   
+                                    <button class="btn btn-default" id="downfloor" style="">下一层 <i class="fa fa-angle-right"></i></button>
+
+                                 
                                     <button id="tijiao" name="save" class="btn btn-primary">保存</button>
                                 </div>
                             </div>
@@ -349,6 +362,47 @@
     <script src="plugins/handsontable/moment/moment.js"></script>
     <script type="plugins/handsontable/pikaday/pikaday.js"></script>
     <script type="text/javascript">
+    $(function(){
+        $('#building, #floor').bind("change", function() {
+                // 处理逻辑
+                confirm('还未保存，确定要换楼层或楼层么？');
+            });
+        $('#upper, #downfloor').bind("click", function() {
+                // 处理逻辑
+                confirm('还未保存，确定要换楼层么？');
+            });
+    
+    
+       
+
+        $('#upper').click(function(){
+            var floor=$("#floor").val();
+            if(floor!=1)
+            {
+                  floor--;
+                 $('#floor').val(floor);
+            }
+            else{
+                $('#floor').val(1);
+            }
+        });
+        
+        $('#downfloor').click(function() {
+             var floor=$("#floor").val();
+            if(floor!=6)
+            {
+                  floor++;
+                 $('#floor').val(floor);
+            }
+            else{
+                $('#floor').val(floor);
+            }
+        });
+
+    });
+
+
+    //pace
     $(document).ajaxStart(function() {
         Pace.restart();
     });
@@ -360,9 +414,9 @@
             }
         });
     });
-
+    //handsontable
     var data = function() {
-        return Handsontable.helper.createSpreadsheetData(150, 3);
+        return Handsontable.helper.createSpreadsheetData(30, 5);
     };
 
     var container = document.getElementById('example');
@@ -371,7 +425,7 @@
         data: data(),
         rowHeaders: true,
         colHeaders: true,
-        colWidths: 300,
+        colWidths: 200,
         rowHeights: 30,
         minSpareRows: 1,
         // stretchH: 'all',
@@ -381,49 +435,39 @@
         currentColClassName: 'currentCol',
         autoWrapRow: true,
         // contextMenu: true,
-        colHeaders: ['寝室号', '本月水费', '日期'],
+        colHeaders: ['寝室号', '上月水表数','本月水表数','本月用水量','本月应缴水费'],
         search: true,
         columns: [{
-            // type: 'autocomplete',
-            // source: ['Audi', 'BMW', 'Chrysler', 'Citroen', 'Mercedes', 'Nissan', 'Opel', 'Suzuki', 'Toyota', 'Volvo'],
-            // strict: false
+            data: 'dorm', //！！第一列写寝室号 只读
+            readOnly: true
+          
         }, {
-            // 2nd cell is simple text, no special options here
-        }, {
-            type: 'date',
-            dateFormat: 'YYYY/MM/DD',
-            correctFormat: true,
-            defaultDate: '2016/09/01'
-        }]
+            data: 'lastmonth', //！！第二列上月水表数 只读
+            readOnly: true
+        }, {},{},{}]
     });
     hot.clear();
 
 
 
-    var search = document.getElementById('search');
 
-    function onlyExactMatch(queryStr, value) {
-        return queryStr.toString() === value.toString();
-    }
+    //ajax post
+    var build=$("#building").find("option:selected").text(); 
+    var fl=$("#floor").find("option:selected").text(); 
 
-    Handsontable.Dom.addEvent(search, 'keyup', function(event) {
-        var queryResult = hot.search.query(this.value);
-        console.log(queryResult);
-        hot.render();
-    });
-var building=$('#building').val();
-    var floor=$('#floor').val();
-    
-    $('#tijiao').click(function() {
+    $('#save').click(function() {
+        console.log(build);
+        console.log(fl);
         console.log(hot.getData());
+
     });
 
     $('button[name=save]').click(function () {
         $.ajax({
           url: "water.php",
           data: { 
-               "building":building,
-               "floor":floor,
+               "building":build,
+               "floor":fl,
                "data": hot.getData()
           }, 
           dataType: 'json',

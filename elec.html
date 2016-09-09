@@ -181,11 +181,18 @@
                             <li><a href="noticepic.html"><i class="fa fa-circle-o"></i> 通知轮播图</a></li>
                         </ul>
                     </li>
-                    <li class="treeview active">
-                        <a href="#"><i class="fa fa-table"></i> <span>水电费</span> <i class="fa fa-angle-left pull-right"></i></a>
+                    <li class="treeview ">
+                        <a href="#"><i class="fa fa-table"></i> <span>水费</span> <i class="fa fa-angle-left pull-right"></i></a>
                         <ul class="treeview-menu">
-                            <li><a href="water.html"><i class="fa fa-circle-o"></i> 水费</a></li>
-                            <li><a href="#"><i class="fa fa-circle-o"></i> 电费</a></li>
+                            <li><a href="water.html"><i class="fa fa-circle-o"></i> 新增水费批次</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 历史水费清单</a></li>
+                        </ul>
+                    </li>
+                     <li class="treeview active">
+                        <a href="#"><i class="fa fa-bolt"></i> <span>电费</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 新增电费批次</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 历史电费清单</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -202,7 +209,7 @@
         
         <div class="panel-tools">
                 
-                <i class="fa fa-thumb-tack"> 各寝室楼电费</i>
+                <i class="fa fa-thumb-tack">录入电费新批次</i>
                 <div class="btn-group" style="float:right">
                  <!--  <button class="btn btn-primary" data-event="add">
                     <i class="fa fa-plus" id="addOneRow" ></i> 增加
@@ -220,10 +227,14 @@
                     <div class="col-xs-12">
                         <div class="box">
                             <div class="box-header">
-                                 <div class="form-group">
-                                    <label style="float:left;margin: 8px">楼号</label>
-                                    <select class="form-control select2" name="building" id="building" style="width:150px;float:left;margin-right:20px">
-                                        <option value="1">2号楼</option>
+                                     <div class="form-group">
+                                    <label style="float:left;margin: 8px">批次</label>
+                                    <input type="date"  class="form-control" name="" style="float:left;width:150px;"> ---   
+                                    <input type="date"  class="form-control" name="" style="width:150px;display:inline-block;">
+                                     <button class="btn btn-primary" style="margin-top: -3px;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                    <label style="margin: 8px">楼号</label>
+                                    <select class="form-control select2" id="building" style="width:150px;margin-right:20px;display:inline-block;">
+                                        <option value="1" selected>2号楼</option>
                                         <option value="2">3号楼</option>
                                         <option value="3">4号北楼</option>
                                         <option value="4">4号南楼</option>
@@ -238,7 +249,7 @@
                                         <option value="13">11号南楼</option>
                                         <option value="14">12号北楼</option>
                                         <option value="15">12号南楼</option>
-                                        <option value="16">13号楼</option>
+                                        <option value="16" >13号楼</option>
                                         <option value="17">14号楼</option>
                                         <option value="18">15号楼</option>
                                         <option value="19">16号楼</option>
@@ -266,16 +277,21 @@
                                         <option value="41">东校区13</option>
                                         <option value="42">东校区14</option>
                                     </select>
-                                    <label style="float:left;margin: 8px">层号</label>
-                                    <select class="form-control select2" name="floor" id="floor" style="width:150px;float:left;margin-right:20px">
+
+                                     <button class="btn btn-default"  id ="upper" style="display:inline-block;"><i class="fa fa-angle-left "></i> 上一层</button>
+                                    <label style="margin: 8px;">层号</label>
+                                    <select class="form-control select2" id ="floor" style="width:150px;margin-right:20px;display:inline-block;">
                                         <option value="1">1层</option>
                                         <option value="2">2层</option>
                                         <option value="3">3层</option>
                                         <option value="4">4层</option>
                                         <option value="5">5层</option>
-                                        
+                                        <option value="6">6层</option>
                                     </select>
-                                    <input id="search" class="form-control" style="width:250px;float:left;margin-right: 20px" placeholder="Search" />
+                                   
+                                    <button class="btn btn-default" id="downfloor" style="">下一层 <i class="fa fa-angle-right"></i></button>
+
+                                 
                                     <button id="tijiao" name="save" class="btn btn-primary">保存</button>
                                 </div>
                             </div>
@@ -372,7 +388,7 @@
         data: data(),
         rowHeaders: true,
         colHeaders: true,
-        colWidths: 300,
+        colWidths: 200,
         rowHeights: 30,
         minSpareRows: 1,
         // stretchH: 'all',
@@ -382,43 +398,27 @@
         currentColClassName: 'currentCol',
         autoWrapRow: true,
         // contextMenu: true,
-        colHeaders: ['寝室号', '本月电费', '日期'],
+        colHeaders: ['寝室号', '上月电表数','本月电表数','本月用电量','本月应缴水费'],
         search: true,
         columns: [{
-            // type: 'autocomplete',
-            // source: ['Audi', 'BMW', 'Chrysler', 'Citroen', 'Mercedes', 'Nissan', 'Opel', 'Suzuki', 'Toyota', 'Volvo'],
-            // strict: false
+            data: 'dorm', //！！第一列写寝室号
+            readOnly: true
+          
         }, {
-            // 2nd cell is simple text, no special options here
-        }, {
-            type: 'date',
-            dateFormat: 'YYYY/MM/DD',
-            correctFormat: true,
-            defaultDate: '2016/09/01'
-        }]
+            data: 'lastmonth', //！！第二列上月电表数 只读
+            readOnly: true
+        }, {},{},{}]
     });
     hot.clear();
 
 
-
-    var search = document.getElementById('search');
-
-    function onlyExactMatch(queryStr, value) {
-        return queryStr.toString() === value.toString();
-    }
-
-    Handsontable.Dom.addEvent(search, 'keyup', function(event) {
-        var queryResult = hot.search.query(this.value);
-        console.log(queryResult);
-        hot.render();
-    });
 
     
 
     var building=$('#building').val();
     var floor=$('#floor').val();
     
-    $('#tijiao').click(function() {
+    $('#save').click(function() {
         console.log(hot.getData());
     });
 

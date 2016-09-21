@@ -349,7 +349,7 @@
     <!-- ./wrapper -->
     <!-- REQUIRED JS SCRIPTS -->
     <!-- jQuery 2.2.0 -->
-    <script src="plugins/jQuery/jQuery-2.2.0.min.js"></script>
+    <script src="plugins/jQuery/jquery.min.js"></script>
     <script src="plugins/handsontable/handsontable.full.js"></script>
     <!-- Bootstrap 3.3.6 -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -379,7 +379,7 @@
 
 
     var data = function() {
-        return Handsontable.helper.createSpreadsheetData(150, 3);
+        return Handsontable.helper.createSpreadsheetData(30, 3);
     };
 
     var container = document.getElementById('example');
@@ -402,19 +402,36 @@
         search: true,
         columns: [{
             data: 'dorm', //！！第一列写寝室号
-            readOnly: true
+            editor: false
           
         }, {
             data: 'lastmonth', //！！第二列上月电表数 只读
-            readOnly: true
-        }, {},{},{}]
+            reditor: false
+        }, {},{editor: false},{editor: false}]
     });
     hot.clear();
 
+    $("td").click(function(){
+                var _row=$(this).parent().index();
+                console.log(_row);
+                // console.log($(this));
+                // console.log($(this).children('td').eq(2));
+            if(hot.getDataAtCell(_row,2)){
+                var usage=hot.getDataAtCell(_row,2)-hot.getDataAtCell(_row,1);
+                hot.setDataAtCell(_row,3,usage);
+                if(hot.getDataAtCell(_row,3)>15){
+                    var pay=parseFloat((hot.getDataAtCell(_row,3)-15)*3.2).toFixed(2);
+                      hot.setDataAtCell(_row,4,pay);
+                }else{
+                     hot.setDataAtCell(_row,4,0);
+                }
+           }
+                        
+        }); 
 
 
     
-
+    //ajax post
     var building=$('#building').val();
     var floor=$('#floor').val();
     

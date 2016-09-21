@@ -346,7 +346,7 @@
     <!-- ./wrapper -->
     <!-- REQUIRED JS SCRIPTS -->
     <!-- jQuery 2.2.0 -->
-    <script src="plugins/jQuery/jQuery-2.2.0.min.js"></script>
+    <script src="plugins/jQuery/jquery.min.js"></script>
     <script src="plugins/handsontable/handsontable.full.js"></script>
     <!-- Bootstrap 3.3.6 -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -434,19 +434,108 @@
         currentRowClassName: 'currentRow',
         currentColClassName: 'currentCol',
         autoWrapRow: true,
+
         // contextMenu: true,
         colHeaders: ['寝室号', '上月水表数','本月水表数','本月用水量','本月应缴水费'],
         search: true,
         columns: [{
             data: 'dorm', //！！第一列写寝室号 只读
-            readOnly: true
+            editor: false
           
         }, {
             data: 'lastmonth', //！！第二列上月水表数 只读
-            readOnly: true
-        }, {},{},{}]
+            // editor: false
+        }, {},{editor: false},{editor: false}]
     });
-    hot.clear();
+     hot.clear();
+
+
+		$("td").click(function(){
+		    	var _row=$(this).parent().index();
+		    	console.log(_row);
+		    	// console.log($(this));
+		    	// console.log($(this).children('td').eq(2));
+		    if(hot.getDataAtCell(_row,2)){
+	    		var usage=hot.getDataAtCell(_row,2)-hot.getDataAtCell(_row,1);
+			    hot.setDataAtCell(_row,3,usage);
+			    if(hot.getDataAtCell(_row,3)>15){
+			    	var pay=parseFloat((hot.getDataAtCell(_row,3)-15)*3.2).toFixed(2);
+			    	  hot.setDataAtCell(_row,4,pay);
+			    }else{
+			    	 hot.setDataAtCell(_row,4,0);
+			    }
+		   }
+			    		
+		});	
+		
+ 
+
+
+ //    document.addEventListener("DOMContentLoaded", function() {
+
+ //  var container = document.getElementById('example'), hot;
+
+	// var hot= new Handsontable(container, {
+	//     data: [],
+	//     dataSchema: {dormid: 501, lastmonth:23.5,thismonth:null,wateruse:null, watercharge: null},
+	//     startRows: 5,
+	//     startCols: 5,
+	//     colWidths: 200,
+	//     rowHeights: 30,
+	//     rowHeaders: true,
+	//     currentRowClassName: 'currentRow',
+	//     currentColClassName: 'currentCol',
+	//     renderAllRows: true,
+	//   //   afterChange: function(changes, source) {
+	// 	 //    ajax({
+	// 	 //      url: "save.php",
+	// 	 //      data: change
+	// 	 //    });
+	// 	 // }
+	//     colHeaders: ['寝室号', '上月水表数', '本月水表数', '本月用水量','本月应缴水费'],
+	//     columns: [
+	//       {data: 'dormid',editor: false}, //第一列写寝室号 只读
+	//       {data: 'lastmonth',editor: false}, //！！第二列上月水表数 只读
+	//       {data: 'thismonth'}, //空着由老师填写
+	//       {data: 'wateruse'},   //自动计算
+	//       {data: 'watercharge'} //自动计算
+	//     ],
+	//     minSpareRows: 1
+	// });
+
+	// $("tr").click(function(){
+ //    	var _row=$(this).index();
+ //    	console.log(_row);
+ //    	// console.log($(this));
+ //    	// console.log($(this).children('td').eq(2));
+	//     		if(hot.getDataAtCell(_row,2)){
+	// 	    		var usage=hot.getDataAtCell(_row,2)-hot.getDataAtCell(_row,1);
+	// 			    hot.setDataAtCell(_row,3,usage);
+	//     	   }
+	// });	
+
+  
+	//   function bindDumpButton() {
+	//       if (typeof Handsontable === "undefined") {
+	//         return;
+	//       }
+	  
+	//       Handsontable.Dom.addEvent(document.body, 'click', function (e) {
+	  
+	//         var element = e.target || e.srcElement;
+	  
+	//         if (element.nodeName == "BUTTON" && element.name == 'dump') {
+	//           var name = element.getAttribute('data-dump');
+	//           var instance = element.getAttribute('data-instance');
+	//           var hot = window[instance];
+	//           console.log('data of ' + name, hot.getData());
+	//          }
+	//        });
+	//    }
+ //  		bindDumpButton();
+
+	// });
+	
 
 
 

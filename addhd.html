@@ -131,10 +131,6 @@
               </li>
             </ul>
           </li>
-          <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -184,11 +180,18 @@
           </ul>
         </li>        
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>寝室卫生</span> <i class="fa fa-angle-left pull-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> 个人成绩</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> 整体成绩</a></li>
-          </ul>
+            <a href="#"><i class="fa fa-tint"></i> <span>水费</span> <i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+                <li><a href="#"><i class="fa fa-circle-o"></i> 新增水费批次</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> 历史水费清单</a></li>
+            </ul>
+        </li>
+         <li class="treeview">
+            <a href="#"><i class="fa fa-bolt"></i> <span>电费</span> <i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+                <li><a href="elec.html"><i class="fa fa-circle-o"></i> 新增电费批次</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> 历史电费清单</a></li>
+            </ul>
         </li>
       </ul>
       <!-- /.sidebar-menu -->
@@ -273,49 +276,13 @@
     <!-- Default to the left -->
     <strong>Copyright &copy; 2016 <a href="#">HDU公寓中心宿舍管理委员会</a></strong> 
   </footer>
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    
-   <div class="tab-content">
-      <div id="control-sidebar-settings-tab">
-        <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Report panel usage
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-            <p>
-              Some information about this general settings option
-            </p>
-          </div>
-         
-          <h3 class="control-sidebar-heading">Chat Settings</h3>
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Delete chat history
-              <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
-            </label>
-          </div>
-          <!-- /.form-group -->
-        </form>
-      </div>
-      <!-- /.tab-pane -->
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 2.2.0 -->
-<script src="plugins/jQuery/jQuery-2.2.0.min.js"></script>
+<script src="plugins/jQuery/jquery.min.js"></script>
 <script src="plugins/jq-form/jquery.form-validator.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="bootstrap/js/bootstrap.min.js"></script>
